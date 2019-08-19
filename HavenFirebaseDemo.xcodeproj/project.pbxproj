@@ -1,0 +1,869 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		011FAD5DB7BFC661A2813B3F /* Pods_HavenFirebaseDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E8BC1CE900DC622EAFA8140 /* Pods_HavenFirebaseDemoUITests.framework */; };
+		C37E5313A86A0368A389FFDB /* Pods_HavenFirebaseDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A233605A3908FAC4E0FCEF68 /* Pods_HavenFirebaseDemo.framework */; };
+		E9FBE36A6C006778CBC752A2 /* Pods_HavenFirebaseDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79BE69BB0AFB3FDF6159E04C /* Pods_HavenFirebaseDemoTests.framework */; };
+		F61049952307DB9C0029717F /* OnboardNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61049942307DB9C0029717F /* OnboardNavigationViewController.swift */; };
+		F628B201230462390074FF2A /* SignUpCreateHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F628B200230462390074FF2A /* SignUpCreateHomeViewController.swift */; };
+		F628B203230462490074FF2A /* SignUpFindHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F628B202230462490074FF2A /* SignUpFindHomeViewController.swift */; };
+		F628B206230469370074FF2A /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F628B205230469370074FF2A /* SignInViewController.swift */; };
+		F628B208230474A80074FF2A /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F628B207230474A80074FF2A /* WelcomeViewController.swift */; };
+		F628B20A230479850074FF2A /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F628B209230479850074FF2A /* HomeScreenViewController.swift */; };
+		F630134A2301D9B80045EF7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63013492301D9B80045EF7A /* AppDelegate.swift */; };
+		F630134F2301D9B80045EF7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F630134D2301D9B80045EF7A /* Main.storyboard */; };
+		F63013512301D9BB0045EF7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F63013502301D9BB0045EF7A /* Assets.xcassets */; };
+		F63013542301D9BB0045EF7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F63013522301D9BB0045EF7A /* LaunchScreen.storyboard */; };
+		F630135F2301D9BB0045EF7A /* HavenFirebaseDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F630135E2301D9BB0045EF7A /* HavenFirebaseDemoTests.swift */; };
+		F630136A2301D9BB0045EF7A /* HavenFirebaseDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63013692301D9BB0045EF7A /* HavenFirebaseDemoUITests.swift */; };
+		F63013782301DBC70045EF7A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F63013772301DBC70045EF7A /* GoogleService-Info.plist */; };
+		F630137B2301F7890045EF7A /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = F630137A2301F7890045EF7A /* Users.swift */; };
+		F630137E2301F8320045EF7A /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F630137D2301F8320045EF7A /* FirebaseController.swift */; };
+		F63013812301FCC40045EF7A /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63013802301FCC40045EF7A /* Home.swift */; };
+		F63013832303193C0045EF7A /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F63013822303193C0045EF7A /* Color.xcassets */; };
+		F630138523031A640045EF7A /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F630138423031A640045EF7A /* UserController.swift */; };
+		F630138723031A6F0045EF7A /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F630138623031A6F0045EF7A /* HomeController.swift */; };
+		F630138C230334D70045EF7A /* SignUpEmailAndPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F630138B230334D70045EF7A /* SignUpEmailAndPasswordViewController.swift */; };
+		F630138E230347390045EF7A /* SignUpNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F630138D230347390045EF7A /* SignUpNameViewController.swift */; };
+		F6301390230347DE0045EF7A /* SignUpCreateHomeFindHomeChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F630138F230347DE0045EF7A /* SignUpCreateHomeFindHomeChoiceViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F630135B2301D9BB0045EF7A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F630133E2301D9B80045EF7A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F63013452301D9B80045EF7A;
+			remoteInfo = HavenFirebaseDemo;
+		};
+		F63013662301D9BB0045EF7A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F630133E2301D9B80045EF7A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F63013452301D9B80045EF7A;
+			remoteInfo = HavenFirebaseDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01684C86EAEA070528FAE26E /* Pods-HavenFirebaseDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HavenFirebaseDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HavenFirebaseDemoTests/Pods-HavenFirebaseDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		0801B2031FDCE85D019BDEDE /* Pods-HavenFirebaseDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HavenFirebaseDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HavenFirebaseDemoTests/Pods-HavenFirebaseDemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		18D55A05353E036224E54A20 /* Pods-HavenFirebaseDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HavenFirebaseDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HavenFirebaseDemo/Pods-HavenFirebaseDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		26C9F80477747B2EC5AA2BB7 /* Pods-HavenFirebaseDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HavenFirebaseDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-HavenFirebaseDemo/Pods-HavenFirebaseDemo.release.xcconfig"; sourceTree = "<group>"; };
+		5C892044230269FDA84321F4 /* Pods-HavenFirebaseDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HavenFirebaseDemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HavenFirebaseDemoUITests/Pods-HavenFirebaseDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6E8BC1CE900DC622EAFA8140 /* Pods_HavenFirebaseDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HavenFirebaseDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7059F710D2C4B243DD124316 /* Pods-HavenFirebaseDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HavenFirebaseDemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HavenFirebaseDemoUITests/Pods-HavenFirebaseDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		79BE69BB0AFB3FDF6159E04C /* Pods_HavenFirebaseDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HavenFirebaseDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A233605A3908FAC4E0FCEF68 /* Pods_HavenFirebaseDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HavenFirebaseDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F61049942307DB9C0029717F /* OnboardNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardNavigationViewController.swift; sourceTree = "<group>"; };
+		F628B200230462390074FF2A /* SignUpCreateHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCreateHomeViewController.swift; sourceTree = "<group>"; };
+		F628B202230462490074FF2A /* SignUpFindHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFindHomeViewController.swift; sourceTree = "<group>"; };
+		F628B205230469370074FF2A /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		F628B207230474A80074FF2A /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		F628B209230479850074FF2A /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
+		F63013462301D9B80045EF7A /* HavenFirebaseDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HavenFirebaseDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F63013492301D9B80045EF7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F630134E2301D9B80045EF7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F63013502301D9BB0045EF7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F63013532301D9BB0045EF7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F63013552301D9BB0045EF7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F630135A2301D9BB0045EF7A /* HavenFirebaseDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HavenFirebaseDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F630135E2301D9BB0045EF7A /* HavenFirebaseDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HavenFirebaseDemoTests.swift; sourceTree = "<group>"; };
+		F63013602301D9BB0045EF7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F63013652301D9BB0045EF7A /* HavenFirebaseDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HavenFirebaseDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F63013692301D9BB0045EF7A /* HavenFirebaseDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HavenFirebaseDemoUITests.swift; sourceTree = "<group>"; };
+		F630136B2301D9BB0045EF7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F63013772301DBC70045EF7A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F630137A2301F7890045EF7A /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		F630137D2301F8320045EF7A /* FirebaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
+		F63013802301FCC40045EF7A /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		F63013822303193C0045EF7A /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
+		F630138423031A640045EF7A /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		F630138623031A6F0045EF7A /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		F630138B230334D70045EF7A /* SignUpEmailAndPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEmailAndPasswordViewController.swift; sourceTree = "<group>"; };
+		F630138D230347390045EF7A /* SignUpNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNameViewController.swift; sourceTree = "<group>"; };
+		F630138F230347DE0045EF7A /* SignUpCreateHomeFindHomeChoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCreateHomeFindHomeChoiceViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F63013432301D9B80045EF7A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C37E5313A86A0368A389FFDB /* Pods_HavenFirebaseDemo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F63013572301D9BB0045EF7A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9FBE36A6C006778CBC752A2 /* Pods_HavenFirebaseDemoTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F63013622301D9BB0045EF7A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				011FAD5DB7BFC661A2813B3F /* Pods_HavenFirebaseDemoUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8A1C5F6542C9DB72DF1837C8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				18D55A05353E036224E54A20 /* Pods-HavenFirebaseDemo.debug.xcconfig */,
+				26C9F80477747B2EC5AA2BB7 /* Pods-HavenFirebaseDemo.release.xcconfig */,
+				01684C86EAEA070528FAE26E /* Pods-HavenFirebaseDemoTests.debug.xcconfig */,
+				0801B2031FDCE85D019BDEDE /* Pods-HavenFirebaseDemoTests.release.xcconfig */,
+				7059F710D2C4B243DD124316 /* Pods-HavenFirebaseDemoUITests.debug.xcconfig */,
+				5C892044230269FDA84321F4 /* Pods-HavenFirebaseDemoUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EC32091B8496341E51C50385 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A233605A3908FAC4E0FCEF68 /* Pods_HavenFirebaseDemo.framework */,
+				79BE69BB0AFB3FDF6159E04C /* Pods_HavenFirebaseDemoTests.framework */,
+				6E8BC1CE900DC622EAFA8140 /* Pods_HavenFirebaseDemoUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F628B2042304624F0074FF2A /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				F61049942307DB9C0029717F /* OnboardNavigationViewController.swift */,
+				F628B207230474A80074FF2A /* WelcomeViewController.swift */,
+				F630138B230334D70045EF7A /* SignUpEmailAndPasswordViewController.swift */,
+				F630138D230347390045EF7A /* SignUpNameViewController.swift */,
+				F630138F230347DE0045EF7A /* SignUpCreateHomeFindHomeChoiceViewController.swift */,
+				F628B200230462390074FF2A /* SignUpCreateHomeViewController.swift */,
+				F628B202230462490074FF2A /* SignUpFindHomeViewController.swift */,
+				F628B205230469370074FF2A /* SignInViewController.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		F630133D2301D9B80045EF7A = {
+			isa = PBXGroup;
+			children = (
+				F63013482301D9B80045EF7A /* HavenFirebaseDemo */,
+				F630135D2301D9BB0045EF7A /* HavenFirebaseDemoTests */,
+				F63013682301D9BB0045EF7A /* HavenFirebaseDemoUITests */,
+				F63013472301D9B80045EF7A /* Products */,
+				8A1C5F6542C9DB72DF1837C8 /* Pods */,
+				EC32091B8496341E51C50385 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F63013472301D9B80045EF7A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F63013462301D9B80045EF7A /* HavenFirebaseDemo.app */,
+				F630135A2301D9BB0045EF7A /* HavenFirebaseDemoTests.xctest */,
+				F63013652301D9BB0045EF7A /* HavenFirebaseDemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F63013482301D9B80045EF7A /* HavenFirebaseDemo */ = {
+			isa = PBXGroup;
+			children = (
+				F630134D2301D9B80045EF7A /* Main.storyboard */,
+				F630138A230334AF0045EF7A /* ViewControllers */,
+				F630137F2301F8380045EF7A /* ModelControllers */,
+				F630137C2301F78E0045EF7A /* Models */,
+				F63013792301F75B0045EF7A /* Resources */,
+				F63013822303193C0045EF7A /* Color.xcassets */,
+				F63013772301DBC70045EF7A /* GoogleService-Info.plist */,
+			);
+			path = HavenFirebaseDemo;
+			sourceTree = "<group>";
+		};
+		F630135D2301D9BB0045EF7A /* HavenFirebaseDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				F630135E2301D9BB0045EF7A /* HavenFirebaseDemoTests.swift */,
+				F63013602301D9BB0045EF7A /* Info.plist */,
+			);
+			path = HavenFirebaseDemoTests;
+			sourceTree = "<group>";
+		};
+		F63013682301D9BB0045EF7A /* HavenFirebaseDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F63013692301D9BB0045EF7A /* HavenFirebaseDemoUITests.swift */,
+				F630136B2301D9BB0045EF7A /* Info.plist */,
+			);
+			path = HavenFirebaseDemoUITests;
+			sourceTree = "<group>";
+		};
+		F63013792301F75B0045EF7A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F63013492301D9B80045EF7A /* AppDelegate.swift */,
+				F63013502301D9BB0045EF7A /* Assets.xcassets */,
+				F63013522301D9BB0045EF7A /* LaunchScreen.storyboard */,
+				F63013552301D9BB0045EF7A /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F630137C2301F78E0045EF7A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F630137A2301F7890045EF7A /* Users.swift */,
+				F63013802301FCC40045EF7A /* Home.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F630137F2301F8380045EF7A /* ModelControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F630137D2301F8320045EF7A /* FirebaseController.swift */,
+				F630138423031A640045EF7A /* UserController.swift */,
+				F630138623031A6F0045EF7A /* HomeController.swift */,
+			);
+			path = ModelControllers;
+			sourceTree = "<group>";
+		};
+		F630138A230334AF0045EF7A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F628B2042304624F0074FF2A /* Onboarding */,
+				F628B209230479850074FF2A /* HomeScreenViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F63013452301D9B80045EF7A /* HavenFirebaseDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F630136E2301D9BB0045EF7A /* Build configuration list for PBXNativeTarget "HavenFirebaseDemo" */;
+			buildPhases = (
+				503C5F33060B379C60EB1356 /* [CP] Check Pods Manifest.lock */,
+				F63013422301D9B80045EF7A /* Sources */,
+				F63013432301D9B80045EF7A /* Frameworks */,
+				F63013442301D9B80045EF7A /* Resources */,
+				E10306DBC332A1CD06483871 /* [CP] Embed Pods Frameworks */,
+				6F1DF537DF3623BA02010498 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HavenFirebaseDemo;
+			productName = HavenFirebaseDemo;
+			productReference = F63013462301D9B80045EF7A /* HavenFirebaseDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F63013592301D9BB0045EF7A /* HavenFirebaseDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F63013712301D9BB0045EF7A /* Build configuration list for PBXNativeTarget "HavenFirebaseDemoTests" */;
+			buildPhases = (
+				66C8AE4D09A3002AD30104F6 /* [CP] Check Pods Manifest.lock */,
+				F63013562301D9BB0045EF7A /* Sources */,
+				F63013572301D9BB0045EF7A /* Frameworks */,
+				F63013582301D9BB0045EF7A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F630135C2301D9BB0045EF7A /* PBXTargetDependency */,
+			);
+			name = HavenFirebaseDemoTests;
+			productName = HavenFirebaseDemoTests;
+			productReference = F630135A2301D9BB0045EF7A /* HavenFirebaseDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F63013642301D9BB0045EF7A /* HavenFirebaseDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F63013742301D9BB0045EF7A /* Build configuration list for PBXNativeTarget "HavenFirebaseDemoUITests" */;
+			buildPhases = (
+				46201CC28F5D02D641CF107D /* [CP] Check Pods Manifest.lock */,
+				F63013612301D9BB0045EF7A /* Sources */,
+				F63013622301D9BB0045EF7A /* Frameworks */,
+				F63013632301D9BB0045EF7A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F63013672301D9BB0045EF7A /* PBXTargetDependency */,
+			);
+			name = HavenFirebaseDemoUITests;
+			productName = HavenFirebaseDemoUITests;
+			productReference = F63013652301D9BB0045EF7A /* HavenFirebaseDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F630133E2301D9B80045EF7A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = DevMountainSquad;
+				TargetAttributes = {
+					F63013452301D9B80045EF7A = {
+						CreatedOnToolsVersion = 10.2;
+					};
+					F63013592301D9BB0045EF7A = {
+						CreatedOnToolsVersion = 10.2;
+						TestTargetID = F63013452301D9B80045EF7A;
+					};
+					F63013642301D9BB0045EF7A = {
+						CreatedOnToolsVersion = 10.2;
+						TestTargetID = F63013452301D9B80045EF7A;
+					};
+				};
+			};
+			buildConfigurationList = F63013412301D9B80045EF7A /* Build configuration list for PBXProject "HavenFirebaseDemo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F630133D2301D9B80045EF7A;
+			productRefGroup = F63013472301D9B80045EF7A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F63013452301D9B80045EF7A /* HavenFirebaseDemo */,
+				F63013592301D9BB0045EF7A /* HavenFirebaseDemoTests */,
+				F63013642301D9BB0045EF7A /* HavenFirebaseDemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F63013442301D9B80045EF7A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F63013542301D9BB0045EF7A /* LaunchScreen.storyboard in Resources */,
+				F63013782301DBC70045EF7A /* GoogleService-Info.plist in Resources */,
+				F63013832303193C0045EF7A /* Color.xcassets in Resources */,
+				F63013512301D9BB0045EF7A /* Assets.xcassets in Resources */,
+				F630134F2301D9B80045EF7A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F63013582301D9BB0045EF7A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F63013632301D9BB0045EF7A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		46201CC28F5D02D641CF107D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HavenFirebaseDemoUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		503C5F33060B379C60EB1356 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HavenFirebaseDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		66C8AE4D09A3002AD30104F6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HavenFirebaseDemoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6F1DF537DF3623BA02010498 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HavenFirebaseDemo/Pods-HavenFirebaseDemo-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestore/gRPCCertificates-Firestore.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates-Firestore.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HavenFirebaseDemo/Pods-HavenFirebaseDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E10306DBC332A1CD06483871 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HavenFirebaseDemo/Pods-HavenFirebaseDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HavenFirebaseDemo/Pods-HavenFirebaseDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F63013422301D9B80045EF7A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F630137E2301F8320045EF7A /* FirebaseController.swift in Sources */,
+				F628B201230462390074FF2A /* SignUpCreateHomeViewController.swift in Sources */,
+				F61049952307DB9C0029717F /* OnboardNavigationViewController.swift in Sources */,
+				F630137B2301F7890045EF7A /* Users.swift in Sources */,
+				F630138723031A6F0045EF7A /* HomeController.swift in Sources */,
+				F630138523031A640045EF7A /* UserController.swift in Sources */,
+				F630138C230334D70045EF7A /* SignUpEmailAndPasswordViewController.swift in Sources */,
+				F628B208230474A80074FF2A /* WelcomeViewController.swift in Sources */,
+				F628B203230462490074FF2A /* SignUpFindHomeViewController.swift in Sources */,
+				F63013812301FCC40045EF7A /* Home.swift in Sources */,
+				F628B206230469370074FF2A /* SignInViewController.swift in Sources */,
+				F630134A2301D9B80045EF7A /* AppDelegate.swift in Sources */,
+				F630138E230347390045EF7A /* SignUpNameViewController.swift in Sources */,
+				F6301390230347DE0045EF7A /* SignUpCreateHomeFindHomeChoiceViewController.swift in Sources */,
+				F628B20A230479850074FF2A /* HomeScreenViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F63013562301D9BB0045EF7A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F630135F2301D9BB0045EF7A /* HavenFirebaseDemoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F63013612301D9BB0045EF7A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F630136A2301D9BB0045EF7A /* HavenFirebaseDemoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F630135C2301D9BB0045EF7A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F63013452301D9B80045EF7A /* HavenFirebaseDemo */;
+			targetProxy = F630135B2301D9BB0045EF7A /* PBXContainerItemProxy */;
+		};
+		F63013672301D9BB0045EF7A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F63013452301D9B80045EF7A /* HavenFirebaseDemo */;
+			targetProxy = F63013662301D9BB0045EF7A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F630134D2301D9B80045EF7A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F630134E2301D9B80045EF7A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F63013522301D9BB0045EF7A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F63013532301D9BB0045EF7A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F630136C2301D9BB0045EF7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F630136D2301D9BB0045EF7A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F630136F2301D9BB0045EF7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18D55A05353E036224E54A20 /* Pods-HavenFirebaseDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CFV9N227P7;
+				INFOPLIST_FILE = "$(SRCROOT)/HavenFirebaseDemo/Resources/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = DevMountainSquad.HavenFirebaseDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F63013702301D9BB0045EF7A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26C9F80477747B2EC5AA2BB7 /* Pods-HavenFirebaseDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CFV9N227P7;
+				INFOPLIST_FILE = "$(SRCROOT)/HavenFirebaseDemo/Resources/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = DevMountainSquad.HavenFirebaseDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F63013722301D9BB0045EF7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01684C86EAEA070528FAE26E /* Pods-HavenFirebaseDemoTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CFV9N227P7;
+				INFOPLIST_FILE = HavenFirebaseDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = DevMountainSquad.HavenFirebaseDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HavenFirebaseDemo.app/HavenFirebaseDemo";
+			};
+			name = Debug;
+		};
+		F63013732301D9BB0045EF7A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0801B2031FDCE85D019BDEDE /* Pods-HavenFirebaseDemoTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CFV9N227P7;
+				INFOPLIST_FILE = HavenFirebaseDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = DevMountainSquad.HavenFirebaseDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HavenFirebaseDemo.app/HavenFirebaseDemo";
+			};
+			name = Release;
+		};
+		F63013752301D9BB0045EF7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7059F710D2C4B243DD124316 /* Pods-HavenFirebaseDemoUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CFV9N227P7;
+				INFOPLIST_FILE = HavenFirebaseDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = DevMountainSquad.HavenFirebaseDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HavenFirebaseDemo;
+			};
+			name = Debug;
+		};
+		F63013762301D9BB0045EF7A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C892044230269FDA84321F4 /* Pods-HavenFirebaseDemoUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CFV9N227P7;
+				INFOPLIST_FILE = HavenFirebaseDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = DevMountainSquad.HavenFirebaseDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HavenFirebaseDemo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F63013412301D9B80045EF7A /* Build configuration list for PBXProject "HavenFirebaseDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F630136C2301D9BB0045EF7A /* Debug */,
+				F630136D2301D9BB0045EF7A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F630136E2301D9BB0045EF7A /* Build configuration list for PBXNativeTarget "HavenFirebaseDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F630136F2301D9BB0045EF7A /* Debug */,
+				F63013702301D9BB0045EF7A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F63013712301D9BB0045EF7A /* Build configuration list for PBXNativeTarget "HavenFirebaseDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F63013722301D9BB0045EF7A /* Debug */,
+				F63013732301D9BB0045EF7A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F63013742301D9BB0045EF7A /* Build configuration list for PBXNativeTarget "HavenFirebaseDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F63013752301D9BB0045EF7A /* Debug */,
+				F63013762301D9BB0045EF7A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F630133E2301D9B80045EF7A /* Project object */;
+}
