@@ -383,7 +383,7 @@
 						CreatedOnToolsVersion = 10.2;
 						SystemCapabilities = {
 							com.apple.Push = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -761,9 +761,8 @@
 			baseConfigurationReference = 18D55A05353E036224E54A20 /* Pods-HavenFirebaseDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = HavenFirebaseDemo/HavenFirebaseDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 899TSM5Z6B;
+				DEVELOPMENT_TEAM = CFV9N227P7;
 				INFOPLIST_FILE = "$(SRCROOT)/HavenFirebaseDemo/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -781,9 +780,8 @@
 			baseConfigurationReference = 26C9F80477747B2EC5AA2BB7 /* Pods-HavenFirebaseDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = HavenFirebaseDemo/HavenFirebaseDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 899TSM5Z6B;
+				DEVELOPMENT_TEAM = CFV9N227P7;
 				INFOPLIST_FILE = "$(SRCROOT)/HavenFirebaseDemo/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
