@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -589,7 +590,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BQs-Wm-Tni">
-                                <rect key="frame" x="0.0" y="414" width="414" height="448"/>
+                                <rect key="frame" x="0.0" y="365" width="414" height="448"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="mzn-lU-Vmx">
                                         <rect key="frame" x="20.5" y="11" width="373" height="68"/>
@@ -677,7 +678,12 @@
         <scene sceneID="JGj-qQ-wKs">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dIu-Bs-bfG" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="home" selectedImage="homeSelected" id="vPs-PL-g1o">
+                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-27"/>
+                        <color key="badgeColor" name="tropicAqua"/>
+                    </tabBarItem>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xmq-iv-tDM">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -694,6 +700,11 @@
     </scenes>
     <resources>
         <image name="006Pencil" width="24" height="24"/>
+        <image name="home" width="35" height="44"/>
+        <image name="homeSelected" width="35" height="44"/>
         <image name="incomplete" width="512" height="512"/>
+        <namedColor name="tropicAqua">
+            <color red="0.31764705882352939" green="0.76470588235294112" blue="0.84705882352941175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
