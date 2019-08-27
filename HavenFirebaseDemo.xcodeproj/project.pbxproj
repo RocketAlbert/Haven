@@ -10,6 +10,9 @@
 		011FAD5DB7BFC661A2813B3F /* Pods_HavenFirebaseDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E8BC1CE900DC622EAFA8140 /* Pods_HavenFirebaseDemoUITests.framework */; };
 		C37E5313A86A0368A389FFDB /* Pods_HavenFirebaseDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A233605A3908FAC4E0FCEF68 /* Pods_HavenFirebaseDemo.framework */; };
 		E9FBE36A6C006778CBC752A2 /* Pods_HavenFirebaseDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79BE69BB0AFB3FDF6159E04C /* Pods_HavenFirebaseDemoTests.framework */; };
+		F60C2D7A230F06350060C1CE /* SuggestionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60C2D79230F06350060C1CE /* SuggestionController.swift */; };
+		F60C2D7C230F15050060C1CE /* Suggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60C2D7B230F15050060C1CE /* Suggestion.swift */; };
+		F60C2D7E230F30FD0060C1CE /* SuggestionsDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60C2D7D230F30FD0060C1CE /* SuggestionsDetailTableViewController.swift */; };
 		F61049952307DB9C0029717F /* OnboardNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61049942307DB9C0029717F /* OnboardNavigationViewController.swift */; };
 		F628B201230462390074FF2A /* SignUpCreateHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F628B200230462390074FF2A /* SignUpCreateHomeViewController.swift */; };
 		F628B203230462490074FF2A /* SignUpFindHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F628B202230462490074FF2A /* SignUpFindHomeViewController.swift */; };
@@ -32,6 +35,10 @@
 		F630138C230334D70045EF7A /* SignUpEmailAndPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F630138B230334D70045EF7A /* SignUpEmailAndPasswordViewController.swift */; };
 		F630138E230347390045EF7A /* SignUpNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F630138D230347390045EF7A /* SignUpNameViewController.swift */; };
 		F6301390230347DE0045EF7A /* SignUpCreateHomeFindHomeChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F630138F230347DE0045EF7A /* SignUpCreateHomeFindHomeChoiceViewController.swift */; };
+		F645E1D2230C566C002C1BA8 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = F645E1D1230C566C002C1BA8 /* Task.swift */; };
+		F645E1D4230C995D002C1BA8 /* SuggestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F645E1D3230C995D002C1BA8 /* SuggestionsViewController.swift */; };
+		F6D9E39D231436F900880854 /* SuggestionCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D9E39C231436F900880854 /* SuggestionCellTableViewCell.swift */; };
+		F6D9E39F2314544A00880854 /* SuggestionDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D9E39E2314544A00880854 /* SuggestionDescriptionTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +68,9 @@
 		7059F710D2C4B243DD124316 /* Pods-HavenFirebaseDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HavenFirebaseDemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HavenFirebaseDemoUITests/Pods-HavenFirebaseDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		79BE69BB0AFB3FDF6159E04C /* Pods_HavenFirebaseDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HavenFirebaseDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A233605A3908FAC4E0FCEF68 /* Pods_HavenFirebaseDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HavenFirebaseDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F60C2D79230F06350060C1CE /* SuggestionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionController.swift; sourceTree = "<group>"; };
+		F60C2D7B230F15050060C1CE /* Suggestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suggestion.swift; sourceTree = "<group>"; };
+		F60C2D7D230F30FD0060C1CE /* SuggestionsDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsDetailTableViewController.swift; sourceTree = "<group>"; };
 		F61049942307DB9C0029717F /* OnboardNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardNavigationViewController.swift; sourceTree = "<group>"; };
 		F628B200230462390074FF2A /* SignUpCreateHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCreateHomeViewController.swift; sourceTree = "<group>"; };
 		F628B202230462490074FF2A /* SignUpFindHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFindHomeViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +99,10 @@
 		F630138B230334D70045EF7A /* SignUpEmailAndPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEmailAndPasswordViewController.swift; sourceTree = "<group>"; };
 		F630138D230347390045EF7A /* SignUpNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNameViewController.swift; sourceTree = "<group>"; };
 		F630138F230347DE0045EF7A /* SignUpCreateHomeFindHomeChoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCreateHomeFindHomeChoiceViewController.swift; sourceTree = "<group>"; };
+		F645E1D1230C566C002C1BA8 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		F645E1D3230C995D002C1BA8 /* SuggestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsViewController.swift; sourceTree = "<group>"; };
+		F6D9E39C231436F900880854 /* SuggestionCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionCellTableViewCell.swift; sourceTree = "<group>"; };
+		F6D9E39E2314544A00880854 /* SuggestionDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionDescriptionTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +241,9 @@
 			children = (
 				F630137A2301F7890045EF7A /* Users.swift */,
 				F63013802301FCC40045EF7A /* Home.swift */,
+				F645E1D1230C566C002C1BA8 /* Task.swift */,
+				F60C2D7B230F15050060C1CE /* Suggestion.swift */,
+				F60C2D79230F06350060C1CE /* SuggestionController.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -246,8 +263,20 @@
 			children = (
 				F628B2042304624F0074FF2A /* Onboarding */,
 				F628B209230479850074FF2A /* HomeScreenViewController.swift */,
+				F645E1DD230DA4F0002C1BA8 /* Suggestion View Controllers */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F645E1DD230DA4F0002C1BA8 /* Suggestion View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F645E1D3230C995D002C1BA8 /* SuggestionsViewController.swift */,
+				F60C2D7D230F30FD0060C1CE /* SuggestionsDetailTableViewController.swift */,
+				F6D9E39C231436F900880854 /* SuggestionCellTableViewCell.swift */,
+				F6D9E39E2314544A00880854 /* SuggestionDescriptionTableViewCell.swift */,
+			);
+			path = "Suggestion View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -517,10 +546,13 @@
 			files = (
 				F630137E2301F8320045EF7A /* FirebaseController.swift in Sources */,
 				F628B201230462390074FF2A /* SignUpCreateHomeViewController.swift in Sources */,
+				F645E1D4230C995D002C1BA8 /* SuggestionsViewController.swift in Sources */,
 				F61049952307DB9C0029717F /* OnboardNavigationViewController.swift in Sources */,
 				F630137B2301F7890045EF7A /* Users.swift in Sources */,
 				F630138723031A6F0045EF7A /* HomeController.swift in Sources */,
+				F60C2D7A230F06350060C1CE /* SuggestionController.swift in Sources */,
 				F630138523031A640045EF7A /* UserController.swift in Sources */,
+				F6D9E39D231436F900880854 /* SuggestionCellTableViewCell.swift in Sources */,
 				F630138C230334D70045EF7A /* SignUpEmailAndPasswordViewController.swift in Sources */,
 				F628B208230474A80074FF2A /* WelcomeViewController.swift in Sources */,
 				F628B203230462490074FF2A /* SignUpFindHomeViewController.swift in Sources */,
@@ -529,7 +561,11 @@
 				F630134A2301D9B80045EF7A /* AppDelegate.swift in Sources */,
 				F630138E230347390045EF7A /* SignUpNameViewController.swift in Sources */,
 				F6301390230347DE0045EF7A /* SignUpCreateHomeFindHomeChoiceViewController.swift in Sources */,
+				F645E1D2230C566C002C1BA8 /* Task.swift in Sources */,
+				F60C2D7E230F30FD0060C1CE /* SuggestionsDetailTableViewController.swift in Sources */,
 				F628B20A230479850074FF2A /* HomeScreenViewController.swift in Sources */,
+				F6D9E39F2314544A00880854 /* SuggestionDescriptionTableViewCell.swift in Sources */,
+				F60C2D7C230F15050060C1CE /* Suggestion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

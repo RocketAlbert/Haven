@@ -30,7 +30,6 @@ class HomeController {
     // Takes in a dictionary and homeID
     func modifyCurrentHome(withHomeUID homeUID: String, withDictionary modifiedDictionary: [String: Any?]) {
         let path = "homes/\(homeUID)"
-        
         FirebaseController.shared.updateDocumentFirebaseFirestore(withPath: path, andWithDictionary: modifiedDictionary as [String : Any]) { (isCompleted) in
             print("modified current home isCompleted is: \(isCompleted)")
         }
