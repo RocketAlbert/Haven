@@ -15,7 +15,10 @@ class ManageTaskTableViewController: UITableViewController {
     var weeklyToggle = false
     var monthlyToggle = false
     var yearlyToggle = false
-    var dateUserSelected : String?
+    // set defaut interval to daily 
+    //var currentlySelectedTaskType: TaskIntervalType = .day
+    var dateToDisplay : String?
+    var dateForNotification: Date?
     
     @IBOutlet weak var editTaskLabel: UITextField!
     
@@ -68,10 +71,6 @@ class ManageTaskTableViewController: UITableViewController {
         editTaskLabel.delegate = self
         hideTaskFrequency()
         hideDatePicker()
-    
-    
-        //self.tableView.rowHeight = UITableView.automaticDimension
-        //self.tableView.estimatedRowHeight = 44
         
     }
     
@@ -103,6 +102,7 @@ class ManageTaskTableViewController: UITableViewController {
     @IBAction func taskFrequencyDoneButtonTapped(_ sender: UIButton) {
         hideTaskFrequency()
         showTaskInterval = false
+        
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 1 {
@@ -132,7 +132,7 @@ class ManageTaskTableViewController: UITableViewController {
     
     
     @IBAction func notifyDoneButtonTapped(_ sender: Any) {
-        notifyDateLabel.text = dateUserSelected
+        notifyDateLabel.text = dateToDisplay
         hideDatePicker()
         showNotifyDate = false
     }
@@ -164,18 +164,23 @@ class ManageTaskTableViewController: UITableViewController {
         }
     }
     
+    
     func hideDatePicker() {
         notifyDatePicker.isHidden = true
         notifyDoneButton.isHidden = true
         //tableView.reloadRows(at: [IndexPath(row: 3, section: 0)], with: .automatic)
     }
+    
     func showDatePicker() {
         self.notifyDatePicker.isHidden = false
         self.notifyDoneButton.isHidden = false
     }
     
     @IBAction func notifyDatePickerChanged(_ sender: UIDatePicker) {
-        dateUserSelected = sender.date.stringValue()
+        dateToDisplay = sender.date.stringValue()
+        dateForNotification = notifyDatePicker.date
+        TaskController.sharedInstance.dateChosen = notifyDatePicker.date
+       // let monthComponent = Calendar.current.component(.hour, from: dateForNotification)
         
     }
     
