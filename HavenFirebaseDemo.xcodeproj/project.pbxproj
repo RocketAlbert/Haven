@@ -12,6 +12,7 @@
 		6AB082DD230C5F0C0041568A /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB082DC230C5F0C0041568A /* NotificationsViewController.swift */; };
 		6AB082DF230C62150041568A /* PushNotificationSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB082DE230C62150041568A /* PushNotificationSender.swift */; };
 		6AD239612315A7F500B17BF7 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD239602315A7F500B17BF7 /* DateHelper.swift */; };
+		6AD239A22318811100B17BF7 /* TaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD239A12318811100B17BF7 /* TaskController.swift */; };
 		6AFD9CC0230EFA570080E80D /* TodoListStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AFD9CBF230EFA570080E80D /* TodoListStoryboard.storyboard */; };
 		6AFD9CC223107F700080E80D /* TodoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFD9CC123107F700080E80D /* TodoListViewController.swift */; };
 		6AFD9CC423107FB90080E80D /* TodoListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFD9CC323107FB90080E80D /* TodoListController.swift */; };
@@ -79,6 +80,7 @@
 		6AB082DC230C5F0C0041568A /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		6AB082DE230C62150041568A /* PushNotificationSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationSender.swift; sourceTree = "<group>"; };
 		6AD239602315A7F500B17BF7 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		6AD239A12318811100B17BF7 /* TaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskController.swift; sourceTree = "<group>"; };
 		6AFD9CBF230EFA570080E80D /* TodoListStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TodoListStoryboard.storyboard; sourceTree = "<group>"; };
 		6AFD9CC123107F700080E80D /* TodoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewController.swift; sourceTree = "<group>"; };
 		6AFD9CC323107FB90080E80D /* TodoListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListController.swift; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 				F630138423031A640045EF7A /* UserController.swift */,
 				F630138623031A6F0045EF7A /* HomeController.swift */,
 				6AFD9CC323107FB90080E80D /* TodoListController.swift */,
+				6AD239A12318811100B17BF7 /* TaskController.swift */,
 			);
 			path = ModelControllers;
 			sourceTree = "<group>";
@@ -564,6 +567,7 @@
 				F628B201230462390074FF2A /* SignUpCreateHomeViewController.swift in Sources */,
 				F645E1D4230C995D002C1BA8 /* SuggestionsViewController.swift in Sources */,
 				F61049952307DB9C0029717F /* OnboardNavigationViewController.swift in Sources */,
+				6AD239A22318811100B17BF7 /* TaskController.swift in Sources */,
 				F630137B2301F7890045EF7A /* Users.swift in Sources */,
 				F630138723031A6F0045EF7A /* HomeController.swift in Sources */,
 				6AFD9CC6231081C50080E80D /* TodoTaskTableViewCell.swift in Sources */,
@@ -766,7 +770,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CFV9N227P7;
+				DEVELOPMENT_TEAM = 899TSM5Z6B;
 				INFOPLIST_FILE = "$(SRCROOT)/HavenFirebaseDemo/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -785,7 +789,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CFV9N227P7;
+				DEVELOPMENT_TEAM = 899TSM5Z6B;
 				INFOPLIST_FILE = "$(SRCROOT)/HavenFirebaseDemo/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

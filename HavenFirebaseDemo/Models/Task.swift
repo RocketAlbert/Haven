@@ -17,7 +17,7 @@ class Task {
     //    var assignedTo: String?
     //    var assignedBy: String?
     var createdByUser: String
-    var datesToBeCompleted: String
+    var dateOfInterval: Date?
     var intervalType: TaskIntervalType
     var completedOn: Date?
     var isCompleted: Bool
@@ -31,14 +31,15 @@ class Task {
         case year
     }
     
-    init(uid: String, taskName: String, home: String, createdByUser: String, datesToBeCompleted: String, intervalType: TaskIntervalType, completedOn: Date?, isCompleted: Bool, repeats: Bool) {
+    
+    init(uid: String, taskName: String, home: String, createdByUser: String, dateOfInterval: Date?, intervalType: TaskIntervalType, completedOn: Date?, isCompleted: Bool, repeats: Bool) {
         self.uid = uid
         self.taskName = taskName
         self.home = home
         //        self.assignedTo = assignedTo
         //        self.assignedBy = assignedBy
         self.createdByUser = createdByUser
-        self.datesToBeCompleted = datesToBeCompleted
+        self.dateOfInterval = dateOfInterval
         self.intervalType = intervalType
         self.completedOn = completedOn
         self.isCompleted = isCompleted
@@ -55,7 +56,7 @@ class Task {
             TaskConstants.createdByUserKey: self.createdByUser,
             TaskConstants.intervalTypeKey: self.intervalType.rawValue,
             TaskConstants.completeOnKey: self.completedOn,
-            TaskConstants.datesToBeCompletedKey: self.datesToBeCompleted,
+            TaskConstants.dateOfIntervalKey: self.dateOfInterval,
             TaskConstants.isCompletedKey: self.isCompleted,
             TaskConstants.repeatsKey: self.repeats
         ]
@@ -72,11 +73,11 @@ extension Task {
             let intervalTypeAsString = dictionary[TaskConstants.intervalTypeKey] as? String,
             let intervalType = TaskIntervalType(rawValue: intervalTypeAsString),
             let completedOn = dictionary[TaskConstants.completeOnKey] as? Date,
-            let datesToBeCompleted = dictionary[TaskConstants.datesToBeCompletedKey] as? String,
+            let dateOfInterval = dictionary[TaskConstants.dateOfIntervalKey] as? Date,
             let repeats = dictionary[TaskConstants.repeatsKey] as? Bool,
             let isCompleted = dictionary[TaskConstants.isCompletedKey] as? Bool else {return nil}
         
-        self.init(uid: uid, taskName: taskName, home: home, createdByUser: createdByUser, datesToBeCompleted: datesToBeCompleted, intervalType: intervalType, completedOn: completedOn, isCompleted: isCompleted, repeats: repeats)
+        self.init(uid: uid, taskName: taskName, home: home, createdByUser: createdByUser, dateOfInterval: dateOfInterval, intervalType: intervalType, completedOn: completedOn, isCompleted: isCompleted, repeats: repeats)
     }
 }
 
@@ -101,7 +102,15 @@ struct TaskConstants {
     fileprivate static let createdByUserKey = "createdByUser"
     fileprivate static let intervalTypeKey = "intervalType"
     fileprivate static let completeOnKey = "completedOn"
-    fileprivate static let datesToBeCompletedKey = "datesToBeCompleted"
+    fileprivate static let dateOfIntervalKey = "dateOfInterval"
     fileprivate static let isCompletedKey = "isCompleted"
     fileprivate static let repeatsKey = "repeats"
+}
+
+enum TaskIntervalType: String {
+    
+    case day
+    case week
+    case month
+    case year
 }

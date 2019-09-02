@@ -41,8 +41,9 @@ class TodoTaskTableViewCell: UITableViewCell {
 }
 
 extension TodoTaskTableViewCell {
-    func update(task: String) {
-        taskLabel.text = task
+    func update(task: Task) {
+        taskLabel.text = task.taskName
+        updateCompleteButton(false)
         
     }
 }
