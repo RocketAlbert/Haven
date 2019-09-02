@@ -14,8 +14,8 @@ class Task {
     var uid: String?
     var taskName: String
     var home: String
-//    var assignedTo: String?
-//    var assignedBy: String?
+    //    var assignedTo: String?
+    //    var assignedBy: String?
     var createdByUser: String
     var dateOfInterval: Date?
     var intervalType: TaskIntervalType
@@ -23,14 +23,21 @@ class Task {
     var isCompleted: Bool
     var repeats: Bool
     
+    enum TaskIntervalType: String {
+        
+        case day
+        case week
+        case month
+        case year
+    }
     
     
     init(uid: String, taskName: String, home: String, createdByUser: String, dateOfInterval: Date?, intervalType: TaskIntervalType, completedOn: Date?, isCompleted: Bool, repeats: Bool) {
         self.uid = uid
         self.taskName = taskName
         self.home = home
-//        self.assignedTo = assignedTo
-//        self.assignedBy = assignedBy
+        //        self.assignedTo = assignedTo
+        //        self.assignedBy = assignedBy
         self.createdByUser = createdByUser
         self.dateOfInterval = dateOfInterval
         self.intervalType = intervalType
@@ -38,14 +45,14 @@ class Task {
         self.isCompleted = isCompleted
         self.repeats = repeats
     }
-
+    
     var dictionary: [String : Any] {
         return [
             TaskConstants.uidKey: self.uid ?? "",
             TaskConstants.taskNameKey: self.taskName,
             TaskConstants.homeKey: self.home,
-//            TaskConstants.assignedByKey: self.assignedBy ?? "",
-//            TaskConstants.assignedToKey: self.assignedTo ?? "",
+            //            TaskConstants.assignedByKey: self.assignedBy ?? "",
+            //            TaskConstants.assignedToKey: self.assignedTo ?? "",
             TaskConstants.createdByUserKey: self.createdByUser,
             TaskConstants.intervalTypeKey: self.intervalType.rawValue,
             TaskConstants.completeOnKey: self.completedOn,
