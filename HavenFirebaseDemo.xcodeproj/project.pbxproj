@@ -48,6 +48,7 @@
 		F645E1D4230C995D002C1BA8 /* SuggestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F645E1D3230C995D002C1BA8 /* SuggestionsViewController.swift */; };
 		F6D9E39D231436F900880854 /* SuggestionCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D9E39C231436F900880854 /* SuggestionCellTableViewCell.swift */; };
 		F6D9E39F2314544A00880854 /* SuggestionDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D9E39E2314544A00880854 /* SuggestionDescriptionTableViewCell.swift */; };
+		F6E888E723197B5200691368 /* TaskFirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E888E623197B5200691368 /* TaskFirebaseController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +123,7 @@
 		F645E1D3230C995D002C1BA8 /* SuggestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsViewController.swift; sourceTree = "<group>"; };
 		F6D9E39C231436F900880854 /* SuggestionCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionCellTableViewCell.swift; sourceTree = "<group>"; };
 		F6D9E39E2314544A00880854 /* SuggestionDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionDescriptionTableViewCell.swift; sourceTree = "<group>"; };
+		F6E888E623197B5200691368 /* TaskFirebaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskFirebaseController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				F630137D2301F8320045EF7A /* FirebaseController.swift */,
+				F6E888E623197B5200691368 /* TaskFirebaseController.swift */,
 				F630138423031A640045EF7A /* UserController.swift */,
 				F630138623031A6F0045EF7A /* HomeController.swift */,
 				6AFD9CC323107FB90080E80D /* TodoListController.swift */,
@@ -570,6 +573,7 @@
 				F60C2D7A230F06350060C1CE /* SuggestionController.swift in Sources */,
 				F630138523031A640045EF7A /* UserController.swift in Sources */,
 				F6D9E39D231436F900880854 /* SuggestionCellTableViewCell.swift in Sources */,
+				F6E888E723197B5200691368 /* TaskFirebaseController.swift in Sources */,
 				F630138C230334D70045EF7A /* SignUpEmailAndPasswordViewController.swift in Sources */,
 				F628B208230474A80074FF2A /* WelcomeViewController.swift in Sources */,
 				6A43EB782314363800EB6BEA /* ManageTaskTableViewController.swift in Sources */,

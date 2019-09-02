@@ -7,7 +7,7 @@
 //
 
 
-// The code executes in the following order.
+// TableViews execute in the following order. This code was created in order to avoid keeping track of cells in data, majing
 // 1. DidSelect
 // 2. CellForRowAt
 // 3. HeightForRowAt
@@ -38,7 +38,8 @@ class SuggestionsDetailTableViewController: UIViewController, UITableViewDataSou
             // 45 seems to be the height that works best.
             return 45.0
         }
-
+        
+        // Checks is cell is open and adjusts the height accordingly.
         guard let cell = tableView.cellForRow(at: indexPath) as? SuggestionDescriptionTableViewCell else {return 0.0}
         print(indexPath.row)
         if cell.isCurrentlyHidden == true {
@@ -69,9 +70,6 @@ class SuggestionsDetailTableViewController: UIViewController, UITableViewDataSou
         cell.isHidden = isCurrent
         // Because there this is a new cell, we must reiterate what was in the previous state.
         cell.isCurrentlyHidden = isCurrent
-        print("cellisCurrent: \(isCurrent)")
-        print("cellisHidden: \(cell.isHidden)")
-        
         cell.decriptionTextView.text = seasonSuggestion?.description
         cell.isUserInteractionEnabled = false
         return cell
@@ -83,7 +81,6 @@ class SuggestionsDetailTableViewController: UIViewController, UITableViewDataSou
         let nextIndexPath:NSIndexPath = NSIndexPath(row: indexPath.row + 1, section: indexPath.section)
         guard let cellToOpen = tableView.cellForRow(at: nextIndexPath as IndexPath) as? SuggestionDescriptionTableViewCell else {return}
         cellToOpen.isCurrentlyHidden = !cellToOpen.isCurrentlyHidden
-        print("isCurrentlyOpen: \(cellToOpen.isCurrentlyHidden)")
         self.tableView.reloadRows(at: [nextIndexPath as IndexPath], with: .none)
     }
 }
