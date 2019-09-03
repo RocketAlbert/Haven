@@ -29,7 +29,7 @@ class TaskController: NSObject {
     var dateComponents = DateComponents()
     // initializes as daily
     var currentlySelectedTaskType: TaskIntervalType = .day
-
+    
     
     // Task Types
     func updateSelectedTaskType(to type: TaskIntervalType) {
@@ -74,54 +74,34 @@ class TaskController: NSObject {
         notificationContent.badge = 1
         
         // date trigger notifications
-       // guard let dateChosen = dateChosen else { return }
+        // guard let dateChosen = dateChosen else { return }
         var trigger: UNNotificationTrigger?
-
-        let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: date)
-        
-        let month = dateComponents.month
-        let day = dateComponents.day
-        let minutes = dateComponents.minute
         
         switch intervalType {
             
         case .day:
-            func dailyTrigger() -> UNNotificationTrigger? {
-                
-                // get user selected date from date picker
-                guard let dailyDate = calendar.date(byAdding: .day, value: 1, to: date) else { return nil }
-                let dailyDateComponents = Calendar.current.dateComponents([.year ,.month, .day, .hour, .minute], from: dailyDate)
-                // schedule based on daily interval from datePickerDate
-                let dailyTrigger = UNCalendarNotificationTrigger(dateMatching: dailyDateComponents, repeats: true)
-                trigger = dailyTrigger
-                return dailyTrigger
-            }
+            // get user selected date from date picker
+            guard let dailyDate = calendar.date(byAdding: .day, value: 1, to: date) else { return }
+            let dailyDateComponents = Calendar.current.dateComponents([.year ,.month, .day, .hour, .minute], from: dailyDate)
+            // schedule based on daily interval from datePickerDate
+            let dailyTrigger = UNCalendarNotificationTrigger(dateMatching: dailyDateComponents, repeats: true)
+            trigger = dailyTrigger
         case .week:
-                func weeklyTrigger() -> UNNotificationTrigger? {
-                    guard let weeklyDate = calendar.date(byAdding: .day, value: 7, to: date) else { return nil }
-                    let weeklyDateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: weeklyDate)
-                    let weeklyTrigger = UNCalendarNotificationTrigger(dateMatching: weeklyDateComponents, repeats: true)
-                    trigger = weeklyTrigger
-                    return weeklyTrigger
-                }
+            guard let weeklyDate = calendar.date(byAdding: .day, value: 7, to: date) else { return }
+            let weeklyDateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: weeklyDate)
+            let weeklyTrigger = UNCalendarNotificationTrigger(dateMatching: weeklyDateComponents, repeats: true)
+            trigger = weeklyTrigger
         case .month:
-            func monthlyTrigger() -> UNNotificationTrigger? {
-                guard let monthlyDate = calendar.date(byAdding: .month, value: 1, to: date) else { return nil }
-                let monthlyDateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: monthlyDate)
-                let monthlyTrigger = UNCalendarNotificationTrigger(dateMatching: monthlyDateComponents, repeats: true)
-                trigger = monthlyTrigger
-                return monthlyTrigger
-            }
+            guard let monthlyDate = calendar.date(byAdding: .month, value: 1, to: date) else { return }
+            let monthlyDateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: monthlyDate)
+            let monthlyTrigger = UNCalendarNotificationTrigger(dateMatching: monthlyDateComponents, repeats: true)
+            trigger = monthlyTrigger
         case .year:
-            func yearlyTrigger() -> UNNotificationTrigger? {
-                guard let yearlyDate = calendar.date(byAdding: .year, value: 1, to: date) else { return nil }
-                let yearlyDateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: yearlyDate)
-                let yearlyTrigger = UNCalendarNotificationTrigger(dateMatching: yearlyDateComponents, repeats: true)
-                trigger = yearlyTrigger
-                return yearlyTrigger
+            guard let yearlyDate = calendar.date(byAdding: .year, value: 1, to: date) else { return }
+            let yearlyDateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: yearlyDate)
+            let yearlyTrigger = UNCalendarNotificationTrigger(dateMatching: yearlyDateComponents, repeats: true)
+            trigger = yearlyTrigger
             
-            }
-    
         }
         
         if let badge = badge {

@@ -38,13 +38,13 @@ class TodoListViewController: UIViewController, TaskTodoTableViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         feedbackLabel.isHidden = true
         addTaskTextField.delegate = self
         taskTableView.delegate = self
         taskTableView.dataSource = self
         // set initial view as Daily
        // updateToDailyInterval()
-        
         // add observer so that the tableview knows when to reload
         NotificationCenter.default.addObserver(forName: Notification.Name("New Task Created"), object: nil, queue: nil) { (_) in
             self.taskTableView.reloadData()
