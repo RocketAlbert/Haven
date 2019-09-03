@@ -240,16 +240,16 @@ class ManageTaskTableViewController: UITableViewController {
         }
         
         if dailyButton.isSelected == true {
-            task.intervalType = TaskIntervalType.day
+            task.intervalType = .day
         }
         if weeklyButton.isSelected == true {
-            task.intervalType = TaskIntervalType.week
+            task.intervalType = .week
         }
         if monthlyButton.isSelected == true {
-            task.intervalType = TaskIntervalType.month
+            task.intervalType = .month
         }
         if yearlyButton.isSelected == true {
-            task.intervalType = TaskIntervalType.year
+            task.intervalType = .year
         }
         
         navigationController?.popViewController(animated: true)

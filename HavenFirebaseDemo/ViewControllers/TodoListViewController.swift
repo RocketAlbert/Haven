@@ -228,6 +228,7 @@ class TodoListViewController: UIViewController, TaskTodoTableViewDelegate {
         guard let taskName = addTaskTextField.text else { return }
         
         if segue.identifier == "toAlertVC" {
+            
             let newlyMadeTask = Task(uid: UUID().uuidString, taskName: taskName, home: "default home", createdByUser: "self", dateOfInterval: TaskController.sharedInstance.dateChosen, intervalType: taskFrequency, completedOn: nil, isCompleted: false, repeats: false)
             let destinationVC = segue.destination as? AlertViewController
             destinationVC?.taskLandingPad = newlyMadeTask
