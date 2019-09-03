@@ -329,7 +329,7 @@ extension TodoListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func presentAddSwipeAlert() {
         
-        let alertController = UIAlertController(title: "Swipe Capabilities", message: "Swipe Task to left to Remove & Swipe Task to right to Complete", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Swipe Capabilities", message: "Swipe Left to Remove Task & Swipe Right to Mark as Complete ", preferredStyle: .alert)
         
         
         // Action: Add
