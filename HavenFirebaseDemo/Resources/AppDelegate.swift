@@ -10,7 +10,7 @@ import UIKit
 import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
     
@@ -24,18 +24,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if let error = error {
                 print(error.localizedDescription)
             }
+            center.getNotificationSettings(completionHandler: { (settings) in
+                if settings.authorizationStatus != .authorized {
+                    // Notifications not allowed 
+                }
+            })
         }
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
+        UNUserNotificationCenter.current().delegate = self
         requestNotificationAuthorization(application: application)
         return true
         
         } // End didFinishLaunchingWithOptions
     
     // solicit permission from the user to recieve notifications
-    
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
         
@@ -79,4 +83,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void)
+    {
+        let id = response.notification.request.identifier
+        print("Received notification with ID = \(id)")
+        
+        completionHandler()
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void)
+    {
+        let id = notification.request.identifier
+        print("Received notification with ID = \(id)")
+        
+        completionHandler([.sound, .alert, .badge])
+    }
 }
+

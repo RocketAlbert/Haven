@@ -10,7 +10,9 @@ import UIKit
 
 class ManageTaskTableViewController: UITableViewController {
     
-    let checkedImage = UIImage(named: "rounded")
+    var taskLandingPad: Task?
+    
+    let checkedImage = UIImage(named: "checkmark")
     var dailyToggle = false
     var weeklyToggle = false
     var monthlyToggle = false
@@ -21,36 +23,29 @@ class ManageTaskTableViewController: UITableViewController {
     var dateForNotification: Date?
     
     @IBOutlet weak var editTaskLabel: UITextField!
-    
     @IBOutlet weak var taskFrequencyLabel: UILabel!
-    
     @IBOutlet weak var intervalSelectedLabel: UILabel!
     @IBOutlet weak var taskFrequencyToggle: UISwitch!
-    
     @IBOutlet weak var frequencyStackView: UIStackView!
+    
     @IBOutlet weak var dailyButton: UIButton!
     @IBOutlet weak var dailyCheck: UIImageView!
     
     @IBOutlet weak var weeklyButton: UIButton!
-    
     @IBOutlet weak var weeklyCheck: UIImageView!
     
     @IBOutlet weak var monthlyButton: UIButton!
     @IBOutlet weak var monthlyCheck: UIImageView!
-    @IBOutlet weak var yearlyButton: UIButton!
     
+    @IBOutlet weak var yearlyButton: UIButton!
     @IBOutlet weak var yearlyCheck: UIImageView!
     
     @IBOutlet weak var taskFrequencyDoneButton: UIButton!
     
     @IBOutlet weak var notifyMeLabel: UILabel!
-    
     @IBOutlet weak var notifyDateLabel: UILabel!
     @IBOutlet weak var notifyToggle: UISwitch!
-    
     @IBOutlet weak var notifyDatePicker: UIDatePicker!
-    
-    
     @IBOutlet weak var notifyDoneButton: UIButton!
     
     var showTaskInterval: Bool = false {
@@ -71,12 +66,18 @@ class ManageTaskTableViewController: UITableViewController {
         editTaskLabel.delegate = self
         hideTaskFrequency()
         hideDatePicker()
+        updateViews()
         
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        updateViews()
     }
     
     @IBAction func taskFrequencyToggle(_ sender: UISwitch) {
         if taskFrequencyToggle.isOn {
             showTaskInterval = true
+            showNotifyDate = false
         }
         
         UIView.animate(withDuration: 1.9) {
@@ -108,24 +109,60 @@ class ManageTaskTableViewController: UITableViewController {
         if indexPath.row == 1 {
             showTaskInterval = true
             showTaskFrequency()
+            showNotifyDate = false
+            hideDatePicker()
         }
         if indexPath.row == 3 {
             showNotifyDate = true
             showDatePicker()
+            showTaskInterval = false
+            hideTaskFrequency()
+        }
+    }
+    
+    func updateViews() {
+        // unwrap object to verify there is content
+        guard let task = taskLandingPad else { return }
+        
+        editTaskLabel.text = task.taskName
+        switch task.intervalType {
+        case .day:
+            intervalSelectedLabel.text = "Daily"
+            displayDailyChecked()
+        case .week:
+            intervalSelectedLabel.text = "Weekly"
+            displayWeeklyChecked()
+        case .month:
+            intervalSelectedLabel.text = "Monthly"
+            displayMonthlyChecked()
+        case .year:
+            intervalSelectedLabel.text = "Yearly"
+            displayYearlyChecked()
+        }
+        
+        //intervalSelectedLabel.text = task.intervalType.rawValue
+        notifyDateLabel.text = task.dateOfInterval?.stringValue()
+        
+        // update date picker value
+        if let date = task.dateOfInterval {
+            notifyDatePicker.date = date
         }
     }
    
     
     @IBAction func notifyToggle(_ sender: UISwitch) {
-        if notifyToggle.isOn {
-            showNotifyDate = true
-        }
+    
         UIView.animate(withDuration: 1.5) {
             if self.notifyToggle.isOn == true {
+                self.notifyDateLabel.text = "Select Date Below"
+                self.showNotifyDate = true
                 self.showDatePicker()
+                self.taskLandingPad?.repeats = true
             } else if self.notifyToggle.isOn == false {
                 self.showNotifyDate = false
                 self.hideDatePicker()
+                self.taskLandingPad?.repeats = false
+                self.notifyDateLabel.text = "Currently turned off"
             }
         }
     }
@@ -185,14 +222,76 @@ class ManageTaskTableViewController: UITableViewController {
     }
     
     @IBAction func removeTaskButtonTapped(_ sender: UIButton) {
+        // TODO: verify tableview is reloaded, on view will appear
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func taskDoneButtonTapped(_ sender: UIButton) {
+        // unwrap object
+        guard let task = taskLandingPad else { return }
+        
+        if task.taskName != editTaskLabel.text {
+            guard let newName = editTaskLabel.text else { return }
+            task.taskName = newName
+        }
+        
+        if task.dateOfInterval != notifyDatePicker.date {
+            task.dateOfInterval = notifyDatePicker.date
+        }
+        
+        if dailyButton.isSelected == true {
+            task.intervalType = TaskIntervalType.day
+        }
+        if weeklyButton.isSelected == true {
+            task.intervalType = TaskIntervalType.week
+        }
+        if monthlyButton.isSelected == true {
+            task.intervalType = TaskIntervalType.month
+        }
+        if yearlyButton.isSelected == true {
+            task.intervalType = TaskIntervalType.year
+        }
+        
+        navigationController?.popViewController(animated: true)
+        // TODO: Verify tableView is reloaded at viewWillAppear
+        
+        // if there is newly created data use it to update the CRUD function
+        //TaskController.sharedInstance.updateTask(task: Task, newName: newTaskName, dateOfInterval: newDate, newIntervalFrequency: frequency)
+        
     }
+    
+    func displayDailyChecked() {
+        dailyCheck.image = checkedImage
+        weeklyCheck.image = nil
+        monthlyCheck.image = nil
+        yearlyCheck.image = nil
+    }
+    
+    func displayWeeklyChecked() {
+        dailyCheck.image = nil
+        weeklyCheck.image = checkedImage
+        monthlyCheck.image = nil
+        yearlyCheck.image = nil
+    }
+    
+    func displayMonthlyChecked() {
+        dailyCheck.image = nil
+        weeklyCheck.image = nil
+        monthlyCheck.image = checkedImage
+        yearlyCheck.image = nil
+    }
+    
+    func displayYearlyChecked() {
+        dailyCheck.image = nil
+        weeklyCheck.image = nil
+        monthlyCheck.image = nil
+        yearlyCheck.image = checkedImage
+    }
+    
     
     @IBAction func dailyFrequencyTapped(_ sender: UIButton) {
         if dailyToggle == false {
-            dailyCheck.image = checkedImage
+            displayDailyChecked()
             intervalSelectedLabel.text = "Daily"
             dailyToggle = true
             
@@ -205,7 +304,7 @@ class ManageTaskTableViewController: UITableViewController {
     
     @IBAction func weeklyFrequencyTapped(_ sender: UIButton) {
         if weeklyToggle == false {
-            weeklyCheck.image = checkedImage
+            displayWeeklyChecked()
             intervalSelectedLabel.text = "Weekly"
             weeklyToggle = true
         } else if weeklyToggle == true {
@@ -216,7 +315,7 @@ class ManageTaskTableViewController: UITableViewController {
     }
     @IBAction func monthlyButtonTapped(_ sender: UIButton) {
         if monthlyToggle == false {
-            monthlyCheck.image = checkedImage
+            displayMonthlyChecked()
             intervalSelectedLabel.text = "Monthly"
             monthlyToggle = true
         } else if monthlyToggle == true {
@@ -227,7 +326,7 @@ class ManageTaskTableViewController: UITableViewController {
     }
     @IBAction func yearlyButtonTapped(_ sender: UIButton) {
         if yearlyToggle == false {
-            yearlyCheck.image = checkedImage
+            displayYearlyChecked()
             intervalSelectedLabel.text = "Yearly"
             yearlyToggle = true
         } else if yearlyToggle == true {
@@ -239,7 +338,7 @@ class ManageTaskTableViewController: UITableViewController {
     }
     
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -247,7 +346,7 @@ class ManageTaskTableViewController: UITableViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }
 

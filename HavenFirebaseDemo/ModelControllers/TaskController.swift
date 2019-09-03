@@ -52,7 +52,7 @@ class TaskController: NSObject {
     // pass in user components, necessary data to make a task
     func createTask(name: String, date: Date?, intervalFrequency: TaskIntervalType, repeats: Bool) {
         
-        let task = Task(uid: UUID().uuidString, taskName: name, home: "default home", createdByUser: "self", dateOfInterval: date, intervalType: intervalFrequency, completedOn: nil, isCompleted: false, repeats: true)
+        let task = Task(uid: UUID().uuidString, taskName: name, home: "default home", createdByUser: "self", dateOfInterval: date, intervalType: intervalFrequency, completedOn: nil, isCompleted: false, repeats: repeats)
         
         tasks.append(task)
         NotificationCenter.default.post(name: Notification.Name("New Task Created"), object: nil)
@@ -65,23 +65,23 @@ class TaskController: NSObject {
     }
     
     // create/send notification
-    func sendNotification(title: String, subtitle: String, body: String, badge: Int?, intervalType: TaskIntervalType) {
+    func sendNotification(title: String, subtitle: String, body: String, badge: Int?, intervalType: TaskIntervalType, date: Date) {
         
         let notificationContent = UNMutableNotificationContent()
         notificationContent.title = title
         notificationContent.subtitle = subtitle
         notificationContent.body = body
+        notificationContent.badge = 1
         
         // date trigger notifications
-        guard let dateChosen = dateChosen else { return }
+       // guard let dateChosen = dateChosen else { return }
+        var trigger: UNNotificationTrigger?
 
-        let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: dateChosen)
+        let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: date)
         
         let month = dateComponents.month
         let day = dateComponents.day
         let minutes = dateComponents.minute
-        
-        var trigger: UNNotificationTrigger?
         
         switch intervalType {
             
@@ -89,7 +89,7 @@ class TaskController: NSObject {
             func dailyTrigger() -> UNNotificationTrigger? {
                 
                 // get user selected date from date picker
-                guard let dailyDate = calendar.date(byAdding: .day, value: 1, to: dateChosen) else { return nil }
+                guard let dailyDate = calendar.date(byAdding: .day, value: 1, to: date) else { return nil }
                 let dailyDateComponents = Calendar.current.dateComponents([.year ,.month, .day, .hour, .minute], from: dailyDate)
                 // schedule based on daily interval from datePickerDate
                 let dailyTrigger = UNCalendarNotificationTrigger(dateMatching: dailyDateComponents, repeats: true)
@@ -98,7 +98,7 @@ class TaskController: NSObject {
             }
         case .week:
                 func weeklyTrigger() -> UNNotificationTrigger? {
-                    guard let weeklyDate = calendar.date(byAdding: .day, value: 7, to: dateChosen) else { return nil }
+                    guard let weeklyDate = calendar.date(byAdding: .day, value: 7, to: date) else { return nil }
                     let weeklyDateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: weeklyDate)
                     let weeklyTrigger = UNCalendarNotificationTrigger(dateMatching: weeklyDateComponents, repeats: true)
                     trigger = weeklyTrigger
@@ -106,7 +106,7 @@ class TaskController: NSObject {
                 }
         case .month:
             func monthlyTrigger() -> UNNotificationTrigger? {
-                guard let monthlyDate = calendar.date(byAdding: .month, value: 1, to: dateChosen) else { return nil }
+                guard let monthlyDate = calendar.date(byAdding: .month, value: 1, to: date) else { return nil }
                 let monthlyDateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: monthlyDate)
                 let monthlyTrigger = UNCalendarNotificationTrigger(dateMatching: monthlyDateComponents, repeats: true)
                 trigger = monthlyTrigger
@@ -114,7 +114,7 @@ class TaskController: NSObject {
             }
         case .year:
             func yearlyTrigger() -> UNNotificationTrigger? {
-                guard let yearlyDate = calendar.date(byAdding: .year, value: 1, to: dateChosen) else { return nil }
+                guard let yearlyDate = calendar.date(byAdding: .year, value: 1, to: date) else { return nil }
                 let yearlyDateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: yearlyDate)
                 let yearlyTrigger = UNCalendarNotificationTrigger(dateMatching: yearlyDateComponents, repeats: true)
                 trigger = yearlyTrigger

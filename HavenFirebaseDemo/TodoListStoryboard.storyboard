@@ -20,10 +20,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WGl-ip-h65">
-                                <rect key="frame" x="0.0" y="220" width="414" height="525"/>
+                                <rect key="frame" x="0.0" y="220" width="414" height="525.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TaskCell" rowHeight="62" id="cgN-r6-lVt" customClass="TodoTaskTableViewCell" customModule="HavenFirebaseDemo" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="TaskCell" rowHeight="62" id="cgN-r6-lVt" customClass="TodoTaskTableViewCell" customModule="HavenFirebaseDemo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="62"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cgN-r6-lVt" id="WiH-Xw-huH">
@@ -35,33 +35,37 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="0cK-ZO-Xrc" secondAttribute="height" multiplier="1:1" id="b2u-5E-SgF"/>
                                                     </constraints>
-                                                    <state key="normal" image="incomplete"/>
+                                                    <state key="normal" image="completeCircle"/>
                                                     <connections>
                                                         <action selector="isCompleteButtonTapped:" destination="cgN-r6-lVt" eventType="touchUpInside" id="tFb-0N-uY9"/>
                                                     </connections>
                                                 </button>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="b9o-Y6-i9K">
-                                                    <rect key="frame" x="321" y="22.5" width="83" height="16.5"/>
+                                                    <rect key="frame" x="300.5" y="15.5" width="103.5" height="30.5"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ou3-8l-gPD">
-                                                            <rect key="frame" x="0.0" y="0.0" width="39" height="16.5"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ou3-8l-gPD">
+                                                            <rect key="frame" x="0.0" y="0.0" width="49.5" height="30.5"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" secondItem="ou3-8l-gPD" secondAttribute="height" multiplier="143:61" id="X8K-aV-4Of"/>
+                                                                <constraint firstAttribute="width" secondItem="ou3-8l-gPD" secondAttribute="height" multiplier="130:80" id="X8K-aV-4Of"/>
                                                             </constraints>
-                                                            <state key="normal" title="Bell"/>
+                                                            <state key="normal" image="bellIcon"/>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wEB-WK-Jvh">
-                                                            <rect key="frame" x="44" y="0.0" width="39" height="16.5"/>
-                                                            <state key="normal" title="..."/>
+                                                        <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wEB-WK-Jvh">
+                                                            <rect key="frame" x="54.5" y="0.0" width="49" height="30.5"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                                            <state key="normal" title="...">
+                                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </state>
                                                             <connections>
                                                                 <action selector="ellipseButtonTapped:" destination="cgN-r6-lVt" eventType="touchUpInside" id="d7Y-3Q-o0o"/>
-                                                                <segue destination="X98-IB-5RA" kind="show" id="CK1-gr-mwK"/>
+                                                                <action selector="moreButtonTapped:" destination="5TR-ng-6db" eventType="touchUpInside" id="JRl-7h-mO5"/>
+                                                                <segue destination="X98-IB-5RA" kind="show" identifier="toManageVC" id="CK1-gr-mwK"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
                                                 </stackView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u5c-uG-cg7">
-                                                    <rect key="frame" x="65.5" y="20.5" width="247.5" height="20.5"/>
+                                                    <rect key="frame" x="65.5" y="20.5" width="227" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -79,7 +83,7 @@
                                         </tableViewCellContentView>
                                         <constraints>
                                             <constraint firstItem="0cK-ZO-Xrc" firstAttribute="leading" secondItem="cgN-r6-lVt" secondAttribute="leading" constant="8" id="fj6-dx-tYs"/>
-                                            <constraint firstItem="b9o-Y6-i9K" firstAttribute="width" secondItem="cgN-r6-lVt" secondAttribute="width" multiplier="0.2" id="jm6-qg-GGV"/>
+                                            <constraint firstItem="b9o-Y6-i9K" firstAttribute="width" secondItem="cgN-r6-lVt" secondAttribute="width" multiplier="0.25" id="jm6-qg-GGV"/>
                                             <constraint firstItem="0cK-ZO-Xrc" firstAttribute="height" secondItem="cgN-r6-lVt" secondAttribute="height" multiplier="0.8" id="vsb-WT-6HS"/>
                                         </constraints>
                                         <connections>
@@ -92,44 +96,45 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4su-RF-crc">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="4su-RF-crc">
                                 <rect key="frame" x="0.0" y="88" width="414" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pgW-GV-BEp">
-                                        <rect key="frame" x="0.0" y="0.0" width="96" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                        <state key="normal" title="D"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pgW-GV-BEp">
+                                        <rect key="frame" x="0.0" y="0.0" width="103.5" height="50"/>
+                                        <color key="backgroundColor" red="0.86274509803921573" green="0.95294117647058818" blue="0.96862745098039216" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                                        <state key="normal" image="daily"/>
                                         <connections>
                                             <action selector="dailyButtonTapped:" destination="5TR-ng-6db" eventType="touchUpInside" id="b6v-jx-1Vu"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mgW-MW-uS6">
-                                        <rect key="frame" x="106" y="0.0" width="96" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                        <state key="normal" title="W"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mgW-MW-uS6">
+                                        <rect key="frame" x="103.5" y="0.0" width="103.5" height="50"/>
+                                        <color key="backgroundColor" name="lightBlue"/>
+                                        <state key="normal" image="month"/>
                                         <connections>
                                             <action selector="weeklyButtonTapped:" destination="5TR-ng-6db" eventType="touchUpInside" id="EVN-KL-dpc"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MBi-ML-aFc">
-                                        <rect key="frame" x="212" y="0.0" width="96" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                        <state key="normal" title="M"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MBi-ML-aFc">
+                                        <rect key="frame" x="207" y="0.0" width="103.5" height="50"/>
+                                        <color key="backgroundColor" name="lightBlue"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" image="month"/>
                                         <connections>
                                             <action selector="monthlyButtonTapped:" destination="5TR-ng-6db" eventType="touchUpInside" id="Zdr-XV-eBN"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0AL-hW-dwP">
-                                        <rect key="frame" x="318" y="0.0" width="96" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                        <state key="normal" title="Y"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0AL-hW-dwP">
+                                        <rect key="frame" x="310.5" y="0.0" width="103.5" height="50"/>
+                                        <color key="backgroundColor" name="lightBlue"/>
+                                        <state key="normal" title="Y" image="year"/>
                                         <connections>
                                             <action selector="yearlyButtonTapped:" destination="5TR-ng-6db" eventType="touchUpInside" id="0tK-a8-9rS"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="TO1-4D-bWG"/>
+                                    <constraint firstAttribute="height" constant="50" id="Wrr-Sg-hOg"/>
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Frequency" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Kq-d5-84t">
@@ -145,18 +150,20 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="NMR-Ly-lap">
-                                <rect key="frame" x="0.0" y="745" width="414" height="33"/>
+                                <rect key="frame" x="0.0" y="745.5" width="414" height="32"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="44k-40-t7n">
-                                        <rect key="frame" x="0.0" y="0.0" width="41.5" height="33"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <state key="normal" title="+"/>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="44k-40-t7n">
+                                        <rect key="frame" x="0.0" y="0.0" width="41.5" height="32"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="+">
+                                            <color key="titleColor" name="mustard"/>
+                                        </state>
                                         <connections>
                                             <action selector="addButtonTapped:" destination="5TR-ng-6db" eventType="touchUpInside" id="9Ha-Ks-8Vx"/>
                                         </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add Task..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sbv-Pj-Zsm">
-                                        <rect key="frame" x="51.5" y="1.5" width="362.5" height="30"/>
+                                        <rect key="frame" x="51.5" y="1" width="362.5" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -165,12 +172,15 @@
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your task has been added! :)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6H-2M-U63">
                                 <rect key="frame" x="0.0" y="784" width="414" height="45"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="backgroundColor" name="aquaGreen"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="7cW-6k-kab">
                                 <rect key="frame" x="31" y="214" width="352" height="2"/>
+                                <color key="progressTintColor" name="lightBlue"/>
+                                <color key="trackTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -200,9 +210,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SAJ-j9-HBh"/>
                     </view>
-                    <navigationItem key="navigationItem" title="To-Do List" id="MqX-7y-Xau">
-                        <barButtonItem key="rightBarButtonItem" systemItem="organize" id="CEi-OG-CwU"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="To-Do List" id="MqX-7y-Xau"/>
                     <connections>
                         <outlet property="addTaskButton" destination="44k-40-t7n" id="EXz-fy-ezD"/>
                         <outlet property="addTaskTextField" destination="sbv-Pj-Zsm" id="Jqr-Vi-90q"/>
@@ -222,7 +230,7 @@
             </objects>
             <point key="canvasLocation" x="1457.9710144927537" y="82.366071428571431"/>
         </scene>
-        <!--Manage Task Table View Controller-->
+        <!--Manage Task-->
         <scene sceneID="qQ8-C5-R63">
             <objects>
                 <tableViewController id="X98-IB-5RA" customClass="ManageTaskTableViewController" customModule="HavenFirebaseDemo" customModuleProvider="target" sceneMemberID="viewController">
@@ -295,6 +303,8 @@
                                                 </stackView>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CXx-5t-I78">
                                                     <rect key="frame" x="357" y="11.5" width="51" height="31"/>
+                                                    <color key="onTintColor" name="lightToggle"/>
+                                                    <color key="thumbTintColor" name="darkToggle"/>
                                                     <connections>
                                                         <action selector="taskFrequencyToggle:" destination="X98-IB-5RA" eventType="valueChanged" id="H2B-4v-exx"/>
                                                     </connections>
@@ -331,7 +341,9 @@
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ym6-aL-CRb">
                                                                     <rect key="frame" x="44" y="0.0" width="354" height="34"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                                    <state key="normal" title="   Daily"/>
+                                                                    <state key="normal" title="   Daily">
+                                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </state>
                                                                     <connections>
                                                                         <action selector="dailyFrequencyTapped:" destination="X98-IB-5RA" eventType="touchUpInside" id="6nX-cf-ncf"/>
                                                                     </connections>
@@ -350,7 +362,9 @@
                                                                 </imageView>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OxF-FG-5rK">
                                                                     <rect key="frame" x="44" y="0.0" width="354" height="34.5"/>
-                                                                    <state key="normal" title="   Weekly"/>
+                                                                    <state key="normal" title="   Weekly">
+                                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </state>
                                                                     <connections>
                                                                         <action selector="weeklyFrequencyTapped:" destination="X98-IB-5RA" eventType="touchUpInside" id="Dyu-6t-1f4"/>
                                                                     </connections>
@@ -369,7 +383,9 @@
                                                                 </imageView>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DTw-cM-8gN">
                                                                     <rect key="frame" x="44" y="0.0" width="354" height="34"/>
-                                                                    <state key="normal" title="   Monthly"/>
+                                                                    <state key="normal" title="   Monthly">
+                                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </state>
                                                                     <connections>
                                                                         <action selector="monthlyButtonTapped:" destination="X98-IB-5RA" eventType="touchUpInside" id="Eng-IG-8D3"/>
                                                                     </connections>
@@ -388,7 +404,9 @@
                                                                 </imageView>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y5Q-LN-Nx7">
                                                                     <rect key="frame" x="44" y="0.0" width="354" height="34.5"/>
-                                                                    <state key="normal" title="   Yearly"/>
+                                                                    <state key="normal" title="   Yearly">
+                                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </state>
                                                                     <connections>
                                                                         <action selector="yearlyButtonTapped:" destination="X98-IB-5RA" eventType="touchUpInside" id="rpC-8N-er6"/>
                                                                     </connections>
@@ -402,7 +420,9 @@
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U0s-Av-fYd">
                                                                     <rect key="frame" x="368" y="0.0" width="30" height="34"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                    <state key="normal" title="Done"/>
+                                                                    <state key="normal" title="Done">
+                                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </state>
                                                                     <connections>
                                                                         <action selector="taskFrequencyDoneButtonTapped:" destination="X98-IB-5RA" eventType="touchUpInside" id="2BK-ty-jVf"/>
                                                                     </connections>
@@ -450,6 +470,8 @@
                                                 </stackView>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GVW-55-q5C">
                                                     <rect key="frame" x="357" y="19" width="51" height="31"/>
+                                                    <color key="onTintColor" name="lightToggle"/>
+                                                    <color key="thumbTintColor" name="darkToggle"/>
                                                     <connections>
                                                         <action selector="notifyToggle:" destination="X98-IB-5RA" eventType="valueChanged" id="n9v-vh-yeL"/>
                                                     </connections>
@@ -471,7 +493,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="247"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="I77-nN-Cf0">
+                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="5" translatesAutoresizingMaskIntoConstraints="NO" id="I77-nN-Cf0">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="210"/>
                                                     <date key="date" timeIntervalSinceReferenceDate="588205119.51401901">
                                                         <!--2019-08-22 22:18:39 +0000-->
@@ -483,7 +505,9 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1GW-fz-U3X">
                                                     <rect key="frame" x="380" y="216" width="30" height="27"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <state key="normal" title="Done"/>
+                                                    <state key="normal" title="Done">
+                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
                                                     <connections>
                                                         <action selector="notifyDoneButtonTapped:" destination="X98-IB-5RA" eventType="touchUpInside" id="ngi-Of-wfU"/>
                                                     </connections>
@@ -506,9 +530,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eyi-3C-jQu">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eyi-3C-jQu">
                                                     <rect key="frame" x="31" y="4" width="352" height="42.5"/>
-                                                    <state key="normal" title="Remove from Task"/>
+                                                    <state key="normal" title="Remove from Task" image="removeButton"/>
                                                     <connections>
                                                         <action selector="removeTaskButtonTapped:" destination="X98-IB-5RA" eventType="touchUpInside" id="4HW-hI-8vS"/>
                                                     </connections>
@@ -529,9 +553,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HGv-2g-UKS">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HGv-2g-UKS">
                                                     <rect key="frame" x="31" y="4" width="352" height="42.5"/>
-                                                    <state key="normal" title="Done"/>
+                                                    <state key="normal" title="Done" image="doneButton"/>
                                                     <connections>
                                                         <action selector="taskDoneButtonTapped:" destination="X98-IB-5RA" eventType="touchUpInside" id="Fbw-QQ-4Bf"/>
                                                     </connections>
@@ -553,6 +577,7 @@
                             <outlet property="delegate" destination="X98-IB-5RA" id="uTe-UK-NYy"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Manage Task" id="JS3-fK-c5N" colorLabel="IBBuiltInLabel-Gray"/>
                     <connections>
                         <outlet property="dailyButton" destination="ym6-aL-CRb" id="100-yW-fJF"/>
                         <outlet property="dailyCheck" destination="Re7-FR-Fhj" id="8a4-xH-A5g"/>
@@ -621,19 +646,19 @@
                                             <action selector="datePickerTapped:" destination="KGG-6M-ala" eventType="valueChanged" id="F4X-ah-O5d"/>
                                         </connections>
                                     </datePicker>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="ePf-41-rTQ">
-                                        <rect key="frame" x="0.0" y="371" width="414" height="77"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ePf-41-rTQ">
+                                        <rect key="frame" x="0.0" y="336" width="414" height="112"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qPU-u1-jqp">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
-                                                <state key="normal" title="Add Alert"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qPU-u1-jqp">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                                <state key="normal" image="group3"/>
                                                 <connections>
                                                     <action selector="addAlertButtonTapped:" destination="KGG-6M-ala" eventType="touchUpInside" id="wbu-4w-BIB"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rHy-Ls-Q53">
-                                                <rect key="frame" x="0.0" y="47" width="414" height="30"/>
-                                                <state key="normal" title="Skip"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rHy-Ls-Q53">
+                                                <rect key="frame" x="0.0" y="56" width="414" height="56"/>
+                                                <state key="normal" title="Skip" image="group2"/>
                                                 <connections>
                                                     <action selector="skipButtonTapped:" destination="KGG-6M-ala" eventType="touchUpInside" id="unJ-nk-jYq"/>
                                                 </connections>
@@ -685,6 +710,13 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xmq-iv-tDM">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="tropicAqua"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -698,9 +730,32 @@
     </scenes>
     <resources>
         <image name="006Pencil" width="24" height="24"/>
+        <image name="bellIcon" width="16" height="18"/>
+        <image name="completeCircle" width="24" height="24"/>
+        <image name="daily" width="14" height="15"/>
+        <image name="doneButton" width="352" height="44"/>
+        <image name="group2" width="21" height="5"/>
+        <image name="group3" width="414" height="56"/>
         <image name="home" width="35" height="44"/>
         <image name="homeSelected" width="35" height="44"/>
-        <image name="incomplete" width="512" height="512"/>
+        <image name="month" width="16" height="15"/>
+        <image name="removeButton" width="352" height="44"/>
+        <image name="year" width="14" height="15"/>
+        <namedColor name="aquaGreen">
+            <color red="0.28235294117647058" green="0.80784313725490198" blue="0.5725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="darkToggle">
+            <color red="1" green="0.78431372549019607" blue="0.32941176470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="lightBlue">
+            <color red="0.86299997568130493" green="0.95300000905990601" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="lightToggle">
+            <color red="1" green="0.8901960784313725" blue="0.66274509803921566" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="mustard">
+            <color red="1" green="0.72941176470588232" blue="0.16078431372549021" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="tropicAqua">
             <color red="0.31764705882352939" green="0.76470588235294112" blue="0.84705882352941175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
