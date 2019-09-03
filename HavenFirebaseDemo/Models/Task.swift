@@ -22,16 +22,7 @@ class Task {
     var completedOn: Date?
     var isCompleted: Bool
     var repeats: Bool
-    
-    enum TaskIntervalType: String {
         
-        case day
-        case week
-        case month
-        case year
-    }
-    
-    
     init(uid: String, taskName: String, home: String, createdByUser: String, dateOfInterval: Date?, intervalType: TaskIntervalType, completedOn: Date?, isCompleted: Bool, repeats: Bool) {
         self.uid = uid
         self.taskName = taskName
