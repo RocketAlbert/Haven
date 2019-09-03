@@ -10,6 +10,7 @@ import UIKit
 
 class AlertViewController: UIViewController {
     
+    let appDelegate = UIApplication.shared.delegate as? AppDelegate
     // landing pad from TodoListViewController
     var taskLandingPad: Task?
     
@@ -30,7 +31,21 @@ class AlertViewController: UIViewController {
         
         task.dateOfInterval = datePicker.date
         // TODO: createTask from sharedInstance
+        var frequency: String = ""
+        
+        switch task.intervalType {
+        case .day:
+            frequency = "Daily"
+        case .week:
+            frequency = "Weekly"
+        case .month:
+            frequency = "Monthly"
+        case .year:
+            frequency = "Yearly"
+        }
+        
         TaskController.sharedInstance.createTask(name: task.taskName, date: datePicker.date, intervalFrequency: task.intervalType, repeats: true)
+        TaskController.sharedInstance.sendNotification(title: "\(frequency) - Home Maintenance", subtitle: "", body: task.taskName, badge: 1, intervalType: task.intervalType, date: datePicker.date)
         dismiss(animated: true)
     }
     

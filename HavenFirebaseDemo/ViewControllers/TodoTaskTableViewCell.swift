@@ -22,13 +22,13 @@ class TodoTaskTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+    
     }
     
-    fileprivate func updateCompleteButton(_ isComplete: Bool) {
-        let imageName = isComplete ? "complete" : "incomplete"
-        isCompleteButton.setImage(UIImage(named: imageName), for: .normal)
-    }
+//    fileprivate func updateCompleteButton(_ isComplete: Bool) {
+//        let imageName = isComplete ? "onHolidayBoxChecked" : "completeCircle"
+//        isCompleteButton.setImage(UIImage(named: imageName), for: .normal)
+//    }
     
     
     @IBAction func isCompleteButtonTapped(_ sender: Any) {
@@ -36,6 +36,7 @@ class TodoTaskTableViewCell: UITableViewCell {
     }
     
     @IBAction func ellipseButtonTapped(_ sender: Any) {
+
     }
     
 }
@@ -43,8 +44,8 @@ class TodoTaskTableViewCell: UITableViewCell {
 extension TodoTaskTableViewCell {
     func update(task: Task) {
         taskLabel.text = task.taskName
-        updateCompleteButton(false)
-        
+       // updateCompleteButton(false)
+        task.repeats == true ? notificationButton.setImage(UIImage(named: "bellIcon"), for: .normal) : notificationButton.setImage(UIImage(named: ""), for: .normal)
     }
 }
 
