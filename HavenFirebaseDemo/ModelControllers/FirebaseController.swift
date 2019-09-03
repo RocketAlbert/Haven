@@ -106,6 +106,7 @@ class FirebaseController {
         }
     }
     
+    // Uses array contains.
     func fetchDictionaryFirebaseFireStoreWithContains(collectionPath: String, type: String, searchTerm: String, completion: @escaping ([QueryDocumentSnapshot]) -> Void)  {
         db.collection(collectionPath).whereField(type, arrayContains: searchTerm).getDocuments() {(querySnapshot, err) in
             var foundSnapshots: [QueryDocumentSnapshot] = []
@@ -121,10 +122,6 @@ class FirebaseController {
         }
     }
     
-    
-    func fetchSingleDictionaryFirebaseFireStore() {
-    }
-    
     // UPDATE
     // Takes a path and updates a dictionary within a document.
     func updateDocumentFirebaseFirestore(withPath path: String, andWithDictionary dictionary: [String: Any], completion: @escaping (Bool) -> Void) {
@@ -138,6 +135,17 @@ class FirebaseController {
             } else {
                 completion(true)
                 print("Data has been updated!")
+            }
+        }
+    }
+    
+    func removeDocumentFirebaseFirestore(withPath path: String, completion: @escaping (Bool) -> Void) {
+        var docRef: DocumentReference!
+        docRef = Firestore.firestore().document(path)
+        docRef.delete { (error) in
+            if let error = error {
+                print("There was an error in \(#function) ; \(error) \(error.localizedDescription)")
+                completion (false)
             }
         }
     }

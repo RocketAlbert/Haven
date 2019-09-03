@@ -7,6 +7,7 @@ target 'HavenFirebaseDemo' do
 
   # Pods for HavenFirebaseDemo
     pod 'Firebase/Core'
+    pod 'Firebase/Messaging'
     pod 'Firebase/Auth'
     pod 'Firebase/Firestore'
   target 'HavenFirebaseDemoTests' do
