@@ -164,6 +164,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6A9F7E7D23216AEB008BBBFB /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				F6950DA02320221800F2D67E /* UserTableViewCell.swift */,
+				F6950DA22320223900F2D67E /* UserPageButtonsTableViewCell.swift */,
+				F6950D9D23200F6100F2D67E /* UsersTableViewController.swift */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		8A1C5F6542C9DB72DF1837C8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +221,7 @@
 				F63013472301D9B80045EF7A /* Products */,
 				8A1C5F6542C9DB72DF1837C8 /* Pods */,
 				EC32091B8496341E51C50385 /* Frameworks */,
+				6A9F7E7D23216AEB008BBBFB /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -321,16 +332,6 @@
 				F6D9E39E2314544A00880854 /* SuggestionDescriptionTableViewCell.swift */,
 			);
 			path = "Suggestion View Controllers";
-			sourceTree = "<group>";
-		};
-		F6950D9F232021ED00F2D67E /* Users View Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				F6950D9D23200F6100F2D67E /* UsersTableViewController.swift */,
-				F6950DA02320221800F2D67E /* UserTableViewCell.swift */,
-				F6950DA22320223900F2D67E /* UserPageButtonsTableViewCell.swift */,
-			);
-			path = "Users View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -794,7 +795,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HavenFirebaseDemo/HavenFirebaseDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 899TSM5Z6B;
 				INFOPLIST_FILE = "$(SRCROOT)/HavenFirebaseDemo/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -814,7 +815,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HavenFirebaseDemo/HavenFirebaseDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 899TSM5Z6B;
 				INFOPLIST_FILE = "$(SRCROOT)/HavenFirebaseDemo/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
