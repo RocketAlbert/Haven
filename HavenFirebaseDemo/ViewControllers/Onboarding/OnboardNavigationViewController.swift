@@ -19,6 +19,5 @@ class OnboardNavigationViewController: UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
 }
