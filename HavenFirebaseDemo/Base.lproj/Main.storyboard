@@ -728,12 +728,11 @@
             </objects>
             <point key="canvasLocation" x="2676.811594202899" y="1652.6785714285713"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Sugguestions-->
         <scene sceneID="SUP-29-D6l">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pEh-U5-GVA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="suggestions" id="t5t-Ad-XiT">
-                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-27"/>
+                    <tabBarItem key="tabBarItem" title="Sugguestions" image="shortgrassExtended" id="t5t-Ad-XiT">
                         <color key="badgeColor" name="tropicAqua"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -882,12 +881,11 @@
             </objects>
             <point key="canvasLocation" x="3543" y="1653"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Users-->
         <scene sceneID="UQ6-kh-T8W">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dDa-QF-Wov" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="members" id="FS4-CJ-fdG">
-                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-27"/>
+                    <tabBarItem key="tabBarItem" title="Users" image="people" id="FS4-CJ-fdG">
                         <color key="badgeColor" name="tropicAqua"/>
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
@@ -919,8 +917,8 @@
         <image name="Summer" width="174" height="174"/>
         <image name="Winter" width="180" height="180"/>
         <image name="home" width="35" height="44"/>
-        <image name="members" width="33" height="44"/>
-        <image name="suggestions" width="77" height="46"/>
+        <image name="people" width="26" height="26"/>
+        <image name="shortgrassExtended" width="29" height="24"/>
         <namedColor name="lightBanana">
             <color red="1" green="0.8901960784313725" blue="0.66274509803921566" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -48,6 +48,7 @@ class ManageTaskTableViewController: UITableViewController {
     @IBOutlet weak var notifyDatePicker: UIDatePicker!
     @IBOutlet weak var notifyDoneButton: UIButton!
     
+    @IBOutlet weak var removeIntervalButton: UIButton!
     var showTaskInterval: Bool = false {
         didSet {
             tableView.reloadData()
@@ -132,19 +133,32 @@ class ManageTaskTableViewController: UITableViewController {
         case .day:
             intervalSelectedLabel.text = "Daily"
             displayDailyChecked()
+        removeIntervalButton.setImage(UIImage(named: "removeDaily"), for: .normal)
         case .week:
             intervalSelectedLabel.text = "Weekly"
             displayWeeklyChecked()
+        removeIntervalButton.setImage(UIImage(named: "removeWeekly"), for: .normal)
         case .month:
             intervalSelectedLabel.text = "Monthly"
             displayMonthlyChecked()
+        removeIntervalButton.setImage(UIImage(named: "removeMonthly"), for: .normal)
         case .year:
             intervalSelectedLabel.text = "Yearly"
             displayYearlyChecked()
+        removeIntervalButton.setImage(UIImage(named: "removeYearly"), for: .normal
+            )
+        }
+        
+        if task.repeats == true {
+            notifyToggle.isOn = true
+            notifyDateLabel.text = task.dateOfInterval?.stringValue()
+        } else if task.repeats == false {
+            notifyToggle.isOn = false
+            notifyDateLabel.text = "Currently turned off"
+
         }
         
         //intervalSelectedLabel.text = task.intervalType.rawValue
-        notifyDateLabel.text = task.dateOfInterval?.stringValue()
         
         // update date picker value
         if let date = task.dateOfInterval {
@@ -239,8 +253,15 @@ class ManageTaskTableViewController: UITableViewController {
         guard let task = taskLandingPad else { return }
         
         guard let newTask = editTaskLabel.text else { return }
+        var repeats: Bool = false
+        
+        if notifyToggle.isOn == true {
+            repeats = true
+        } else if notifyToggle.isOn == false {
+            repeats = false
+        }
     
-        TaskController.sharedInstance.updateTask(task: task, newName: newTask, dateOfInterval: notifyDatePicker.date, newIntervalFrequency: task.intervalType)
+        TaskController.sharedInstance.updateTask(task: task, newName: newTask, dateOfInterval: notifyDatePicker.date, newIntervalFrequency: task.intervalType, repeats: repeats)
         
         navigationController?.popViewController(animated: true)
         

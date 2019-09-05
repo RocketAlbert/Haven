@@ -28,8 +28,6 @@ class TodoListViewController: UIViewController {
     
     @IBOutlet weak var addTaskTextField: UITextField!
     
-    @IBOutlet weak var feedbackLabel: UILabel!
-    
     @IBOutlet weak var taskTableView: UITableView!
     
     // initialized to day
@@ -38,8 +36,7 @@ class TodoListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        feedbackLabel.isHidden = true
+    
         addTaskTextField.delegate = self
         taskTableView.delegate = self
         taskTableView.dataSource = self
@@ -72,27 +69,13 @@ class TodoListViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         taskTableView.reloadData()
         
-     
-        
-//        NotificationCenter.default.addObserver(forName: Notification.Name("Notification Created"), object: nil, queue: nil) { (_) in
-//            
-//            self.feedbackLabel.isHidden = false
-//            // Get this to work
-//            UIView.animate(withDuration: 5, delay: 1, options: .curveEaseIn, animations: {
-//            self.feedbackLabel.isHidden = true
-//            }, completion: )
-//            
-//            
-//            
-//            
-//        }
     }
     
     // de-initialize
@@ -106,7 +89,7 @@ class TodoListViewController: UIViewController {
     @objc func keyboardWillShow(notification: NSNotification) {
         
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if view.frame.origin.y == 0 {
+            if self.view.frame.origin.y == 0 {
                 self.view.frame.origin.y -= keyboardSize.height
             }
             
@@ -114,18 +97,11 @@ class TodoListViewController: UIViewController {
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
-        if view.frame.origin.y != 0 {
+        if self.view.frame.origin.y != 0 {
             self.view.frame.origin.y = 0
         }
     }
-    
-    @objc func keyboardWillChange(notification: NSNotification) {
-        
-        guard let keyboardRect = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
-            return
-        }
-        
-    }
+
     
     func updateToDailyInterval() {
         dailySelected()
