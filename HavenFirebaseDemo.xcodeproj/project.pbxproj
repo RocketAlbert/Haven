@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		011FAD5DB7BFC661A2813B3F /* Pods_HavenFirebaseDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E8BC1CE900DC622EAFA8140 /* Pods_HavenFirebaseDemoUITests.framework */; };
+		6A2D8153232004360088A7B5 /* CompletedTasksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2D8152232004360088A7B5 /* CompletedTasksTableViewController.swift */; };
 		6A43EB782314363800EB6BEA /* ManageTaskTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A43EB772314363800EB6BEA /* ManageTaskTableViewController.swift */; };
 		6AB082DD230C5F0C0041568A /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB082DC230C5F0C0041568A /* NotificationsViewController.swift */; };
 		6AB082DF230C62150041568A /* PushNotificationSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB082DE230C62150041568A /* PushNotificationSender.swift */; };
@@ -78,6 +79,7 @@
 		18D55A05353E036224E54A20 /* Pods-HavenFirebaseDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HavenFirebaseDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HavenFirebaseDemo/Pods-HavenFirebaseDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		26C9F80477747B2EC5AA2BB7 /* Pods-HavenFirebaseDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HavenFirebaseDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-HavenFirebaseDemo/Pods-HavenFirebaseDemo.release.xcconfig"; sourceTree = "<group>"; };
 		5C892044230269FDA84321F4 /* Pods-HavenFirebaseDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HavenFirebaseDemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HavenFirebaseDemoUITests/Pods-HavenFirebaseDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6A2D8152232004360088A7B5 /* CompletedTasksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedTasksTableViewController.swift; sourceTree = "<group>"; };
 		6A43EB772314363800EB6BEA /* ManageTaskTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageTaskTableViewController.swift; sourceTree = "<group>"; };
 		6AB082DB230B69110041568A /* HavenFirebaseDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HavenFirebaseDemo.entitlements; sourceTree = "<group>"; };
 		6AB082DC230C5F0C0041568A /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
@@ -304,7 +306,7 @@
 				6AFD9CC5231081C50080E80D /* TodoTaskTableViewCell.swift */,
 				6AFD9CC723108E530080E80D /* AlertViewController.swift */,
 				6A43EB772314363800EB6BEA /* ManageTaskTableViewController.swift */,
-				F6950D9F232021ED00F2D67E /* Users View Controllers */,
+				6A2D8152232004360088A7B5 /* CompletedTasksTableViewController.swift */,
 				F645E1DD230DA4F0002C1BA8 /* Suggestion View Controllers */,
 			);
 			path = ViewControllers;
@@ -595,6 +597,7 @@
 				F60C2D7A230F06350060C1CE /* SuggestionController.swift in Sources */,
 				F630138523031A640045EF7A /* UserController.swift in Sources */,
 				F6D9E39D231436F900880854 /* SuggestionCellTableViewCell.swift in Sources */,
+				6A2D8153232004360088A7B5 /* CompletedTasksTableViewController.swift in Sources */,
 				F6E888E723197B5200691368 /* TaskFirebaseController.swift in Sources */,
 				F630138C230334D70045EF7A /* SignUpEmailAndPasswordViewController.swift in Sources */,
 				F628B208230474A80074FF2A /* WelcomeViewController.swift in Sources */,
@@ -831,7 +834,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CFV9N227P7;
+				DEVELOPMENT_TEAM = 899TSM5Z6B;
 				INFOPLIST_FILE = HavenFirebaseDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -853,7 +856,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CFV9N227P7;
+				DEVELOPMENT_TEAM = 899TSM5Z6B;
 				INFOPLIST_FILE = HavenFirebaseDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -874,7 +877,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CFV9N227P7;
+				DEVELOPMENT_TEAM = 899TSM5Z6B;
 				INFOPLIST_FILE = HavenFirebaseDemoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -895,7 +898,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CFV9N227P7;
+				DEVELOPMENT_TEAM = 899TSM5Z6B;
 				INFOPLIST_FILE = HavenFirebaseDemoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
