@@ -39,7 +39,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HAVEN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bns-4s-Mrn">
-                                <rect key="frame" x="155" y="457" width="104" height="36"/>
+                                <rect key="frame" x="155" y="432.5" width="104" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -71,31 +71,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rsf-sL-dlu">
-                                <rect key="frame" x="41.5" y="274.5" width="41" height="21"/>
+                                <rect key="frame" x="41.5" y="260" width="41" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qxU-g3-CxU">
-                                <rect key="frame" x="41.5" y="369.5" width="74" height="21"/>
+                                <rect key="frame" x="41.5" y="350" width="74" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jQz-fk-P0b">
-                                <rect key="frame" x="41.5" y="317.5" width="331" height="30"/>
+                                <rect key="frame" x="41.5" y="300.5" width="331" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rQ4-li-aGK">
-                                <rect key="frame" x="41.5" y="412.5" width="331" height="30"/>
+                                <rect key="frame" x="41.5" y="390.5" width="331" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E6x-Eu-p7u">
-                                <rect key="frame" x="340.5" y="460" width="32" height="30"/>
+                                <rect key="frame" x="340.5" y="435.5" width="32" height="30"/>
                                 <state key="normal" title="Next"/>
                                 <connections>
                                     <action selector="nextButtonTapped:" destination="zfr-Q3-3Rr" eventType="touchUpInside" id="yfB-zt-af8"/>
@@ -149,7 +149,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lx2-xm-Nyc">
-                                <rect key="frame" x="41.5" y="365" width="331" height="30"/>
+                                <rect key="frame" x="41.5" y="345.5" width="331" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="name"/>
@@ -168,7 +168,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5DH-7M-nSW">
-                                <rect key="frame" x="41.5" y="80" width="40" height="30"/>
+                                <rect key="frame" x="41.5" y="75" width="40" height="30"/>
                                 <state key="normal" title="BACK">
                                     <color key="titleColor" name="tropicAqua"/>
                                 </state>
@@ -209,14 +209,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="45v-S0-ezB">
-                                <rect key="frame" x="155.5" y="365" width="103" height="30"/>
+                                <rect key="frame" x="155.5" y="345.5" width="103" height="30"/>
                                 <state key="normal" title="Create a Home"/>
                                 <connections>
                                     <segue destination="Su6-kt-0Ay" kind="show" identifier="createHomeOnboardSegue" id="6v8-g7-3jd"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KF9-VH-64g">
-                                <rect key="frame" x="309.5" y="127.5" width="85" height="30"/>
+                                <rect key="frame" x="309.5" y="120" width="85" height="30"/>
                                 <state key="normal" title="Skip for now"/>
                                 <connections>
                                     <action selector="skipForNowButtonTapped:" destination="6Vp-FQ-gmd" eventType="touchUpInside" id="I4a-LM-ake"/>
@@ -256,19 +256,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qr2-3M-teX">
-                                <rect key="frame" x="41.5" y="365" width="331" height="30"/>
+                                <rect key="frame" x="41.5" y="345.5" width="331" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ro-UD-Pq0">
-                                <rect key="frame" x="41.5" y="322" width="95" height="21"/>
+                                <rect key="frame" x="41.5" y="305" width="95" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zipcode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ooq-4w-d8L">
-                                <rect key="frame" x="41.5" y="417" width="63" height="21"/>
+                                <rect key="frame" x="41.5" y="395" width="63" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -281,7 +281,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fuN-fF-kZT">
-                                <rect key="frame" x="41.5" y="460" width="331" height="30"/>
+                                <rect key="frame" x="41.5" y="435.5" width="331" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="postal-code"/>
@@ -322,12 +322,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" text="" placeholder="Search the name of a home..." translatesAutoresizingMaskIntoConstraints="NO" id="WML-Hm-h9B">
-                                <rect key="frame" x="41.5" y="447" width="331" height="56"/>
+                                <rect key="frame" x="41.5" y="422.5" width="331" height="56"/>
                                 <color key="barTintColor" name="tropicAqua"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find your home..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LEa-lz-7Jg">
-                                <rect key="frame" x="41.5" y="417" width="133" height="21"/>
+                                <rect key="frame" x="41.5" y="395" width="133" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -346,33 +346,97 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B3S-Xw-P6u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4009" y="830"/>
+            <point key="canvasLocation" x="4918.840579710145" y="829.6875"/>
         </scene>
-        <!--Home Screen View Controller-->
+        <!--Users-->
         <scene sceneID="APL-LM-Xhv">
             <objects>
-                <viewController id="YMz-24-hbe" customClass="HomeScreenViewController" customModule="HavenFirebaseDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="YMz-24-hbe" customClass="UsersTableViewController" customModule="HavenFirebaseDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9kv-Qp-ttY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9j8-93-W4M">
-                                <rect key="frame" x="32" y="74.5" width="60" height="30"/>
-                                <state key="normal" title="Sign Out"/>
-                                <connections>
-                                    <action selector="signOutButton:" destination="YMz-24-hbe" eventType="touchUpInside" id="OfQ-3r-WSP"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iMu-Mn-cHC">
-                                <rect key="frame" x="0.0" y="142" width="414" height="671"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="5zO-7g-eNL">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="182" id="5zO-7g-eNL">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="182"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5zO-7g-eNL" id="g8h-Jr-kbp">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="181.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="(Name)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GFa-t3-PXj">
+                                                    <rect key="frame" x="151" y="62" width="58" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xpr-Aa-7gx">
+                                                    <rect key="frame" x="20" y="40" width="98" height="87"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="Xpr-Aa-7gx" secondAttribute="height" multiplier="98:87" id="QX7-NT-RZG"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="(Member Status)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfu-iM-NHh">
+                                                    <rect key="frame" x="151" y="91" width="96" height="15"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="207" id="ASP-w7-aS5" customClass="UserPageButtonsTableViewCell" customModule="HavenFirebaseDemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="210" width="414" height="207"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ASP-w7-aS5" id="HoX-Qq-wUt">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="206.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="XNz-8a-INr">
+                                                    <rect key="frame" x="30" y="21" width="354" height="165"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Abu-mF-8V1">
+                                                            <rect key="frame" x="0.0" y="0.0" width="354" height="42.5"/>
+                                                            <state key="normal" title="Create a Home Profile">
+                                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="createHomeProfileButtonTapepd:" destination="ASP-w7-aS5" eventType="touchUpInside" id="imq-M3-Iag"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCZ-Dw-hJs">
+                                                            <rect key="frame" x="0.0" y="61.5" width="354" height="42"/>
+                                                            <state key="normal" title="Join a Home Profile">
+                                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="joinHomeProfButtonTapped:" destination="ASP-w7-aS5" eventType="touchUpInside" id="ADa-kz-4LO"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9j8-93-W4M">
+                                                            <rect key="frame" x="0.0" y="122.5" width="354" height="42.5"/>
+                                                            <state key="normal" title="Logout">
+                                                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="logOutButtonTapped:" destination="ASP-w7-aS5" eventType="touchUpInside" id="Mnb-bs-sl1"/>
+                                                                <action selector="signOutButton:" destination="YMz-24-hbe" eventType="touchUpInside" id="OfQ-3r-WSP"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="XNz-8a-INr" firstAttribute="top" secondItem="HoX-Qq-wUt" secondAttribute="topMargin" constant="10" id="5zk-ax-JR7"/>
+                                                <constraint firstItem="XNz-8a-INr" firstAttribute="leading" secondItem="HoX-Qq-wUt" secondAttribute="leadingMargin" constant="10" id="ALQ-Q7-sg1"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="XNz-8a-INr" secondAttribute="trailing" constant="10" id="QCP-Mq-JWZ"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="XNz-8a-INr" secondAttribute="bottom" constant="10" id="qAA-gf-AAg"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -380,27 +444,24 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="iMu-Mn-cHC" firstAttribute="top" secondItem="9j8-93-W4M" secondAttribute="bottom" constant="37.5" id="10c-6b-fqP"/>
-                            <constraint firstItem="9j8-93-W4M" firstAttribute="centerX" secondItem="9kv-Qp-ttY" secondAttribute="centerX" multiplier="0.3" id="2TZ-9s-pVr"/>
                             <constraint firstItem="iMu-Mn-cHC" firstAttribute="trailing" secondItem="kG2-Iv-Hog" secondAttribute="trailing" id="2xE-Fi-Tu2"/>
-                            <constraint firstItem="9j8-93-W4M" firstAttribute="centerY" secondItem="9kv-Qp-ttY" secondAttribute="centerY" multiplier="0.2" id="ANJ-4v-5vh"/>
+                            <constraint firstItem="iMu-Mn-cHC" firstAttribute="trailing" secondItem="kG2-Iv-Hog" secondAttribute="trailing" id="59U-PO-M2K"/>
+                            <constraint firstItem="iMu-Mn-cHC" firstAttribute="leading" secondItem="kG2-Iv-Hog" secondAttribute="leading" id="Ive-BW-zZz"/>
                             <constraint firstItem="iMu-Mn-cHC" firstAttribute="leading" secondItem="kG2-Iv-Hog" secondAttribute="leading" id="aEo-FI-xg6"/>
+                            <constraint firstItem="iMu-Mn-cHC" firstAttribute="bottom" secondItem="kG2-Iv-Hog" secondAttribute="bottom" id="fXy-Qo-x1J"/>
                             <constraint firstItem="iMu-Mn-cHC" firstAttribute="bottom" secondItem="kG2-Iv-Hog" secondAttribute="bottom" id="lOA-Ol-AXf"/>
+                            <constraint firstItem="iMu-Mn-cHC" firstAttribute="top" secondItem="kG2-Iv-Hog" secondAttribute="top" id="woc-Fh-AdD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kG2-Iv-Hog"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="members" id="FS4-CJ-fdG">
-                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-27"/>
-                        <color key="badgeColor" name="tropicAqua"/>
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" title="Users" id="Mki-Oj-k7l"/>
                     <connections>
                         <segue destination="ZAv-IV-w4g" kind="show" identifier="signOutToOnboardSegue" id="z8g-c8-RYB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bhM-AF-4xY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1042" y="921"/>
+            <point key="canvasLocation" x="2350.7246376811595" y="920.75892857142856"/>
         </scene>
         <!--TodoListStoryboard-->
         <scene sceneID="kZJ-TO-hgY">
@@ -447,38 +508,38 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jej-7f-FYc">
-                                <rect key="frame" x="41.5" y="274.5" width="41" height="21"/>
+                                <rect key="frame" x="41.5" y="260" width="41" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="drV-qC-sjp">
-                                <rect key="frame" x="41.5" y="369.5" width="74" height="21"/>
+                                <rect key="frame" x="41.5" y="350" width="74" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vsk-sV-7eE">
-                                <rect key="frame" x="41.5" y="412.5" width="331" height="30"/>
+                                <rect key="frame" x="41.5" y="390.5" width="331" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Lt-M3-gwm">
-                                <rect key="frame" x="325.5" y="460" width="47" height="30"/>
+                                <rect key="frame" x="325.5" y="435.5" width="47" height="30"/>
                                 <state key="normal" title="Sign In"/>
                                 <connections>
                                     <action selector="signInButtonTapped:" destination="lnW-Gq-UDx" eventType="touchUpInside" id="iji-yR-IML"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zaj-Cy-10M">
-                                <rect key="frame" x="41.5" y="317.5" width="331" height="30"/>
+                                <rect key="frame" x="41.5" y="300.5" width="331" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbx-N8-5Mq">
-                                <rect key="frame" x="41.5" y="80" width="40" height="30"/>
+                                <rect key="frame" x="41.5" y="75" width="40" height="30"/>
                                 <state key="normal" title="BACK">
                                     <color key="titleColor" name="tropicAqua"/>
                                 </state>
@@ -513,7 +574,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wzg-6c-vzU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3245" y="830"/>
+            <point key="canvasLocation" x="4155.072463768116" y="829.6875"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="od1-FD-RQq">
@@ -528,7 +589,7 @@
                     <connections>
                         <segue destination="pEh-U5-GVA" kind="relationship" relationship="viewControllers" id="dfQ-LX-SMG"/>
                         <segue destination="0iX-sb-nb0" kind="relationship" relationship="viewControllers" id="Lu4-ns-eUX"/>
-                        <segue destination="YMz-24-hbe" kind="relationship" relationship="viewControllers" id="WDI-9v-qW3"/>
+                        <segue destination="dDa-QF-Wov" kind="relationship" relationship="viewControllers" id="WDI-9v-qW3"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PY4-XG-iYI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -796,6 +857,33 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aip-Iu-4fB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3543" y="1653"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="UQ6-kh-T8W">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dDa-QF-Wov" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="members" id="FS4-CJ-fdG">
+                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-27"/>
+                        <color key="badgeColor" name="tropicAqua"/>
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Df3-y4-e0c">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="tropicAqua"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="YMz-24-hbe" kind="relationship" relationship="rootViewController" id="geZ-ku-fXi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VkV-I4-I2i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1440.5797101449277" y="920.75892857142856"/>
         </scene>
     </scenes>
     <resources>

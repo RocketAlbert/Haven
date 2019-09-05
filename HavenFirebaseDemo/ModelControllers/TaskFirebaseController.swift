@@ -44,8 +44,8 @@ class TaskFirebaseController {
     
     // Will be called anything is changed.
     // Will be called also called if notfications are toggled on and off.
-    func updateTaskUsingFirebase (taskToUpdate: String, dictionary: [String: Any]) {
-        let path = "task/\(taskToUpdate)"
+    func updateTaskUsingFirebase (taskUID: String, dictionary: [String: Any]) {
+        let path = "task/\(taskUID)"
         FirebaseController.shared.updateDocumentFirebaseFirestore(withPath: path, andWithDictionary: dictionary) { (didUpdate) in
             print(didUpdate)
         }
