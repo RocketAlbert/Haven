@@ -48,13 +48,8 @@
 		F6301390230347DE0045EF7A /* SignUpCreateHomeFindHomeChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F630138F230347DE0045EF7A /* SignUpCreateHomeFindHomeChoiceViewController.swift */; };
 		F645E1D2230C566C002C1BA8 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = F645E1D1230C566C002C1BA8 /* Task.swift */; };
 		F645E1D4230C995D002C1BA8 /* SuggestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F645E1D3230C995D002C1BA8 /* SuggestionsViewController.swift */; };
-		F6950D9E23200F6100F2D67E /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6950D9D23200F6100F2D67E /* UsersTableViewController.swift */; };
-		F6950DA12320221800F2D67E /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6950DA02320221800F2D67E /* UserTableViewCell.swift */; };
-		F6950DA32320223900F2D67E /* UserPageButtonsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6950DA22320223900F2D67E /* UserPageButtonsTableViewCell.swift */; };
-		F6950DE3232171BB00F2D67E /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6950DE2232171BB00F2D67E /* UsersTableViewController.swift */; };
 		F6950DE6232171DD00F2D67E /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6950DE5232171DD00F2D67E /* UserTableViewCell.swift */; };
 		F6950DE8232171E800F2D67E /* UserButtonsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6950DE7232171E800F2D67E /* UserButtonsTableViewCell.swift */; };
-
 		F6D9E39D231436F900880854 /* SuggestionCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D9E39C231436F900880854 /* SuggestionCellTableViewCell.swift */; };
 		F6D9E39F2314544A00880854 /* SuggestionDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D9E39E2314544A00880854 /* SuggestionDescriptionTableViewCell.swift */; };
 		F6E888E723197B5200691368 /* TaskFirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E888E623197B5200691368 /* TaskFirebaseController.swift */; };
@@ -604,13 +599,11 @@
 				6AB082DF230C62150041568A /* PushNotificationSender.swift in Sources */,
 				F628B201230462390074FF2A /* SignUpCreateHomeViewController.swift in Sources */,
 				F6950DE6232171DD00F2D67E /* UserTableViewCell.swift in Sources */,
-				F6950DE3232171BB00F2D67E /* UsersTableViewController.swift in Sources */,
 				F645E1D4230C995D002C1BA8 /* SuggestionsViewController.swift in Sources */,
 				F61049952307DB9C0029717F /* OnboardNavigationViewController.swift in Sources */,
 				6AD239A22318811100B17BF7 /* TaskController.swift in Sources */,
 				F630137B2301F7890045EF7A /* Users.swift in Sources */,
 				F630138723031A6F0045EF7A /* HomeController.swift in Sources */,
-				F6950DA12320221800F2D67E /* UserTableViewCell.swift in Sources */,
 				6AFD9CC6231081C50080E80D /* TodoTaskTableViewCell.swift in Sources */,
 				6AFD9CC223107F700080E80D /* TodoListViewController.swift in Sources */,
 				F630138523031A640045EF7A /* UserController.swift in Sources */,
@@ -634,10 +627,8 @@
 				F628B20A230479850074FF2A /* HomeScreenViewController.swift in Sources */,
 				6AD239612315A7F500B17BF7 /* DateHelper.swift in Sources */,
 				F6950DE8232171E800F2D67E /* UserButtonsTableViewCell.swift in Sources */,
-				F6950DA32320223900F2D67E /* UserPageButtonsTableViewCell.swift in Sources */,
 				6AB082DD230C5F0C0041568A /* NotificationsViewController.swift in Sources */,
 				F6D9E39F2314544A00880854 /* SuggestionDescriptionTableViewCell.swift in Sources */,
-				F6950D9E23200F6100F2D67E /* UsersTableViewController.swift in Sources */,
 				F60C2D7C230F15050060C1CE /* Suggestion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
