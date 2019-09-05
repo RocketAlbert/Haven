@@ -222,6 +222,11 @@ class ManageTaskTableViewController: UITableViewController {
     }
     
     @IBAction func removeTaskButtonTapped(_ sender: UIButton) {
+        guard let task = taskLandingPad else { return }
+        // delete task from source of truth
+        TaskController.sharedInstance.deleteTask(task: task)
+        // remove pending notifications
+        TaskController.sharedInstance.removeNotification(body: task.taskName)
         // TODO: verify tableview is reloaded, on view will appear
         navigationController?.popViewController(animated: true)
     }
@@ -230,33 +235,11 @@ class ManageTaskTableViewController: UITableViewController {
         // unwrap object
         guard let task = taskLandingPad else { return }
         
-        if task.taskName != editTaskLabel.text {
-            guard let newName = editTaskLabel.text else { return }
-            task.taskName = newName
-        }
-        
-        if task.dateOfInterval != notifyDatePicker.date {
-            task.dateOfInterval = notifyDatePicker.date
-        }
-        
-        if dailyButton.isSelected == true {
-            task.intervalType = .day
-        }
-        if weeklyButton.isSelected == true {
-            task.intervalType = .week
-        }
-        if monthlyButton.isSelected == true {
-            task.intervalType = .month
-        }
-        if yearlyButton.isSelected == true {
-            task.intervalType = .year
-        }
+        guard let newTask = editTaskLabel.text else { return }
+    
+        TaskController.sharedInstance.updateTask(task: task, newName: newTask, dateOfInterval: notifyDatePicker.date, newIntervalFrequency: task.intervalType)
         
         navigationController?.popViewController(animated: true)
-        // TODO: Verify tableView is reloaded at viewWillAppear
-        
-        // if there is newly created data use it to update the CRUD function
-        //TaskController.sharedInstance.updateTask(task: Task, newName: newTaskName, dateOfInterval: newDate, newIntervalFrequency: frequency)
         
     }
     
@@ -294,6 +277,7 @@ class ManageTaskTableViewController: UITableViewController {
             displayDailyChecked()
             intervalSelectedLabel.text = "Daily"
             dailyToggle = true
+            taskLandingPad?.intervalType = .day
             
         } else if dailyToggle == true {
             dailyCheck.image = nil
@@ -307,6 +291,7 @@ class ManageTaskTableViewController: UITableViewController {
             displayWeeklyChecked()
             intervalSelectedLabel.text = "Weekly"
             weeklyToggle = true
+            taskLandingPad?.intervalType = .week
         } else if weeklyToggle == true {
             weeklyCheck.image = nil
             intervalSelectedLabel.text = nil
@@ -318,6 +303,7 @@ class ManageTaskTableViewController: UITableViewController {
             displayMonthlyChecked()
             intervalSelectedLabel.text = "Monthly"
             monthlyToggle = true
+            taskLandingPad?.intervalType = .month
         } else if monthlyToggle == true {
             monthlyCheck.image = nil
             intervalSelectedLabel.text = nil
@@ -329,6 +315,7 @@ class ManageTaskTableViewController: UITableViewController {
             displayYearlyChecked()
             intervalSelectedLabel.text = "Yearly"
             yearlyToggle = true
+            taskLandingPad?.intervalType = .year
         } else if yearlyToggle == true {
             yearlyCheck.image = nil
             intervalSelectedLabel.text = nil
@@ -336,17 +323,6 @@ class ManageTaskTableViewController: UITableViewController {
         }
         
     }
-    
-    
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    
 
 }
 
