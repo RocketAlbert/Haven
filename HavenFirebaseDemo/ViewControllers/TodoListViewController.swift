@@ -44,7 +44,7 @@ class TodoListViewController: UIViewController {
         taskTableView.delegate = self
         taskTableView.dataSource = self
         //progressBar.trackImage = UIImage(named: "grass")
-        //progressBar.progressImage = UIImage(named: "grass")
+        //progressBar.progressImage = UIImage(named: "grassLawnMower")
         updateProgressBar()
         progressBar.transform = progressBar.transform.scaledBy(x: 1, y: 8)
         
@@ -228,8 +228,19 @@ class TodoListViewController: UIViewController {
         // TODO: call the textfield first responder
         addTaskTextField.becomeFirstResponder()
         //becomeFirstResponder()
+        if self.addTaskTextField.text?.isEmpty == false {
+            performSegue(withIdentifier: "toAlertVC", sender: nil)
+            addTaskTextField.resignFirstResponder()
+        }
     }
-
+    
+    @IBAction func gestureRecognizer(_ sender: UITapGestureRecognizer) {
+        addTaskTextField.text = ""
+        addTaskTextField.resignFirstResponder()
+    }
+    
+    
+    
     
     @IBAction func moreButtonTapped(_ sender: UIButton) {
         //performSegue(withIdentifier: "toManageVC", sender: nil)
