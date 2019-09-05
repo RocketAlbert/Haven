@@ -177,7 +177,7 @@
                                 <color key="trackTintColor" name="lightBlue"/>
                             </progressView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iuD-FP-KFD">
-                                <rect key="frame" x="275.5" y="704.5" width="132" height="22"/>
+                                <rect key="frame" x="333.5" y="704.5" width="16" height="22"/>
                                 <state key="normal" image="viewCompleted"/>
                                 <connections>
                                     <segue destination="fSU-I3-grA" kind="show" identifier="toCompletedVC" id="pcI-QJ-7G4"/>
@@ -185,6 +185,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="4su-RF-crc" firstAttribute="top" secondItem="SAJ-j9-HBh" secondAttribute="top" id="2nU-6G-Cqj"/>
                             <constraint firstItem="iuD-FP-KFD" firstAttribute="top" secondItem="NMR-Ly-lap" secondAttribute="bottom" constant="4" id="394-cC-pkQ"/>
@@ -214,6 +215,9 @@
                             <constraint firstItem="NMR-Ly-lap" firstAttribute="height" secondItem="S5e-rh-ISa" secondAttribute="height" multiplier="0.06" id="w9P-J0-woB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SAJ-j9-HBh"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="w3u-CE-kAi" appends="YES" id="YdF-Ls-T6n"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="To-Do List" id="MqX-7y-Xau"/>
                     <connections>
@@ -232,6 +236,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wlJ-ec-xcI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="w3u-CE-kAi">
+                    <connections>
+                        <action selector="gestureRecognizer:" destination="5TR-ng-6db" id="K7W-Ru-5lN"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1457.9710144927537" y="82.366071428571431"/>
         </scene>
@@ -700,17 +709,17 @@
                                         </connections>
                                     </datePicker>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ePf-41-rTQ">
-                                        <rect key="frame" x="0.0" y="336" width="414" height="112"/>
+                                        <rect key="frame" x="0.0" y="404" width="414" height="44"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qPU-u1-jqp">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="22"/>
                                                 <state key="normal" image="addAlert"/>
                                                 <connections>
                                                     <action selector="addAlertButtonTapped:" destination="KGG-6M-ala" eventType="touchUpInside" id="wbu-4w-BIB"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rHy-Ls-Q53">
-                                                <rect key="frame" x="0.0" y="56" width="414" height="56"/>
+                                                <rect key="frame" x="0.0" y="22" width="414" height="22"/>
                                                 <state key="normal" title="Skip" image="skip"/>
                                                 <connections>
                                                     <action selector="skipButtonTapped:" destination="KGG-6M-ala" eventType="touchUpInside" id="unJ-nk-jYq"/>
