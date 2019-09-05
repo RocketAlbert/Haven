@@ -54,6 +54,7 @@
 		F6950DE3232171BB00F2D67E /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6950DE2232171BB00F2D67E /* UsersTableViewController.swift */; };
 		F6950DE6232171DD00F2D67E /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6950DE5232171DD00F2D67E /* UserTableViewCell.swift */; };
 		F6950DE8232171E800F2D67E /* UserButtonsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6950DE7232171E800F2D67E /* UserButtonsTableViewCell.swift */; };
+
 		F6D9E39D231436F900880854 /* SuggestionCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D9E39C231436F900880854 /* SuggestionCellTableViewCell.swift */; };
 		F6D9E39F2314544A00880854 /* SuggestionDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D9E39E2314544A00880854 /* SuggestionDescriptionTableViewCell.swift */; };
 		F6E888E723197B5200691368 /* TaskFirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E888E623197B5200691368 /* TaskFirebaseController.swift */; };
