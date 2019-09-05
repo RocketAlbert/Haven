@@ -143,11 +143,12 @@ class TaskController: NSObject {
         UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [body])
         UIApplication.shared.applicationIconBadgeNumber = 0
     }
-    func updateTask(task: Task, newName: String, dateOfInterval: Date?, newIntervalFrequency: TaskIntervalType) {
+    func updateTask(task: Task, newName: String, dateOfInterval: Date?, newIntervalFrequency: TaskIntervalType, repeats: Bool) {
         
         task.taskName = newName
         task.dateOfInterval = dateOfInterval
         task.intervalType = newIntervalFrequency
+        task.repeats = repeats
     }
     
     // Delete
