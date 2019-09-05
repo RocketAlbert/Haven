@@ -604,94 +604,99 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LvN-az-U2f">
-                                <rect key="frame" x="31" y="389.5" width="167" height="167"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="t3q-A9-Ntd">
+                                <rect key="frame" x="30" y="118" width="354" height="556"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wdp-rs-mZh">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="158"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Wdp-rs-mZh" secondAttribute="height" multiplier="356:159" id="5YF-vX-jwq"/>
+                                        </constraints>
+                                        <state key="normal" title="general" backgroundImage="General">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="suggestionCategoryTapped:" destination="461-7t-Ss0" eventType="touchUpInside" id="RMm-fH-d0o"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aea-k3-5KT">
+                                        <rect key="frame" x="0.0" y="176" width="354" height="8"/>
+                                        <color key="backgroundColor" name="lightBanana"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="8" id="MW7-gO-mij"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="hMU-zj-LY9">
+                                        <rect key="frame" x="0.0" y="202" width="354" height="168"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LvN-az-U2f">
+                                                <rect key="frame" x="0.0" y="0.0" width="168" height="168"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="LvN-az-U2f" secondAttribute="height" multiplier="1:1" id="31F-kw-GrO"/>
+                                                </constraints>
+                                                <state key="normal" title="winter" backgroundImage="Winter">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="suggestionCategoryTapped:" destination="461-7t-Ss0" eventType="touchUpInside" id="M0i-HZ-Pvf"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4mb-gk-IJb">
+                                                <rect key="frame" x="186" y="0.0" width="168" height="168"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="4mb-gk-IJb" secondAttribute="height" multiplier="1:1" id="DS4-KS-GOs"/>
+                                                </constraints>
+                                                <state key="normal" title="spring" backgroundImage="Spring">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="suggestionCategoryTapped:" destination="461-7t-Ss0" eventType="touchUpInside" id="nCC-5R-58i"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="eux-bk-j5Z">
+                                        <rect key="frame" x="0.0" y="388" width="354" height="168"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TQz-7i-ASN">
+                                                <rect key="frame" x="0.0" y="0.0" width="168" height="168"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="TQz-7i-ASN" secondAttribute="height" multiplier="1:1" id="7pw-eZ-KDv"/>
+                                                </constraints>
+                                                <state key="normal" title="summer" backgroundImage="Summer">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="suggestionCategoryTapped:" destination="461-7t-Ss0" eventType="touchUpInside" id="fgp-qL-ofU"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZYx-P6-yMr">
+                                                <rect key="frame" x="186" y="0.0" width="168" height="168"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="ZYx-P6-yMr" secondAttribute="height" multiplier="1:1" id="FCb-yE-KH9"/>
+                                                </constraints>
+                                                <state key="normal" title="fall" backgroundImage="Fall">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="suggestionCategoryTapped:" destination="461-7t-Ss0" eventType="touchUpInside" id="dvq-EB-gEX"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="LvN-az-U2f" secondAttribute="height" multiplier="1:1" id="31F-kw-GrO"/>
+                                    <constraint firstItem="Wdp-rs-mZh" firstAttribute="leading" secondItem="LvN-az-U2f" secondAttribute="leading" id="TMJ-lM-p98"/>
+                                    <constraint firstItem="aea-k3-5KT" firstAttribute="leading" secondItem="Wdp-rs-mZh" secondAttribute="leading" id="iUU-sb-fzW"/>
+                                    <constraint firstItem="TQz-7i-ASN" firstAttribute="leading" secondItem="LvN-az-U2f" secondAttribute="leading" id="x7y-Y8-lYV"/>
                                 </constraints>
-                                <state key="normal" title="winter" backgroundImage="Winter">
-                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="suggestionCategoryTapped:" destination="461-7t-Ss0" eventType="touchUpInside" id="M0i-HZ-Pvf"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TQz-7i-ASN">
-                                <rect key="frame" x="31" y="570" width="167" height="166.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="TQz-7i-ASN" secondAttribute="height" multiplier="1:1" id="7pw-eZ-KDv"/>
-                                </constraints>
-                                <state key="normal" title="summer" backgroundImage="Summer">
-                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="suggestionCategoryTapped:" destination="461-7t-Ss0" eventType="touchUpInside" id="fgp-qL-ofU"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZYx-P6-yMr">
-                                <rect key="frame" x="216" y="570" width="167" height="166.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="ZYx-P6-yMr" secondAttribute="height" multiplier="1:1" id="FCb-yE-KH9"/>
-                                </constraints>
-                                <state key="normal" title="fall" backgroundImage="Fall">
-                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="suggestionCategoryTapped:" destination="461-7t-Ss0" eventType="touchUpInside" id="dvq-EB-gEX"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aea-k3-5KT">
-                                <rect key="frame" x="31" y="356.5" width="352" height="8"/>
-                                <color key="backgroundColor" name="lightBanana"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="8" id="MW7-gO-mij"/>
-                                </constraints>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4mb-gk-IJb">
-                                <rect key="frame" x="216" y="389.5" width="167" height="167"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="4mb-gk-IJb" secondAttribute="height" multiplier="1:1" id="DS4-KS-GOs"/>
-                                </constraints>
-                                <state key="normal" title="spring" backgroundImage="Spring">
-                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="suggestionCategoryTapped:" destination="461-7t-Ss0" eventType="touchUpInside" id="nCC-5R-58i"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wdp-rs-mZh">
-                                <rect key="frame" x="31" y="169" width="352" height="157.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Wdp-rs-mZh" secondAttribute="height" multiplier="356:159" id="5YF-vX-jwq"/>
-                                </constraints>
-                                <state key="normal" title="general" backgroundImage="General">
-                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="suggestionCategoryTapped:" destination="461-7t-Ss0" eventType="touchUpInside" id="RMm-fH-d0o"/>
-                                </connections>
-                            </button>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="aea-k3-5KT" firstAttribute="centerY" secondItem="Ash-QA-Bcc" secondAttribute="centerY" multiplier="0.8" id="0pZ-8s-kEa"/>
-                            <constraint firstItem="ZYx-P6-yMr" firstAttribute="top" secondItem="TQz-7i-ASN" secondAttribute="top" id="5MF-qK-L79"/>
-                            <constraint firstItem="aea-k3-5KT" firstAttribute="leading" secondItem="Wdp-rs-mZh" secondAttribute="leading" id="8U5-Ot-FKi"/>
-                            <constraint firstItem="Wdp-rs-mZh" firstAttribute="centerX" secondItem="Ash-QA-Bcc" secondAttribute="centerX" id="8uH-QJ-mDY"/>
-                            <constraint firstItem="LvN-az-U2f" firstAttribute="leading" secondItem="Wdp-rs-mZh" secondAttribute="leading" id="GUZ-KG-4cn"/>
-                            <constraint firstItem="TQz-7i-ASN" firstAttribute="leading" secondItem="LvN-az-U2f" secondAttribute="leading" id="KDc-sf-4g8"/>
-                            <constraint firstItem="TQz-7i-ASN" firstAttribute="width" secondItem="LvN-az-U2f" secondAttribute="width" id="Ng4-Qp-Y0l"/>
-                            <constraint firstItem="4mb-gk-IJb" firstAttribute="trailing" secondItem="Wdp-rs-mZh" secondAttribute="trailing" id="P78-xK-hT7"/>
-                            <constraint firstItem="aea-k3-5KT" firstAttribute="width" secondItem="Wdp-rs-mZh" secondAttribute="width" id="QSY-N7-PmM"/>
-                            <constraint firstItem="ZYx-P6-yMr" firstAttribute="trailing" secondItem="4mb-gk-IJb" secondAttribute="trailing" id="aQo-Ub-HJF"/>
-                            <constraint firstItem="LvN-az-U2f" firstAttribute="width" secondItem="Wdp-rs-mZh" secondAttribute="width" multiplier="0.473988" id="b5B-M4-dhI"/>
-                            <constraint firstItem="Wdp-rs-mZh" firstAttribute="centerY" secondItem="Ash-QA-Bcc" secondAttribute="centerY" multiplier="0.55" id="dpi-ku-Fc5"/>
-                            <constraint firstItem="TQz-7i-ASN" firstAttribute="centerY" secondItem="Ash-QA-Bcc" secondAttribute="centerY" multiplier="1.45" id="eZF-Zp-tmh"/>
-                            <constraint firstItem="4mb-gk-IJb" firstAttribute="width" secondItem="Wdp-rs-mZh" secondAttribute="width" multiplier="0.473988" id="ejo-Mf-Uik"/>
-                            <constraint firstItem="LvN-az-U2f" firstAttribute="centerY" secondItem="Ash-QA-Bcc" secondAttribute="centerY" multiplier="1.05" id="pX1-h5-1OY"/>
-                            <constraint firstItem="ZYx-P6-yMr" firstAttribute="width" secondItem="4mb-gk-IJb" secondAttribute="width" id="uJw-zM-YnF"/>
-                            <constraint firstItem="Wdp-rs-mZh" firstAttribute="width" secondItem="dmL-2G-BYn" secondAttribute="width" multiplier="0.85" id="xGl-Vu-2Vx"/>
-                            <constraint firstItem="4mb-gk-IJb" firstAttribute="top" secondItem="LvN-az-U2f" secondAttribute="top" id="ysJ-VH-qBK"/>
+                            <constraint firstItem="t3q-A9-Ntd" firstAttribute="top" secondItem="Ash-QA-Bcc" secondAttribute="top" constant="30" id="QE2-g1-QqE"/>
+                            <constraint firstItem="Ash-QA-Bcc" firstAttribute="trailing" secondItem="t3q-A9-Ntd" secondAttribute="trailing" constant="30" id="Xqz-TJ-7M5"/>
+                            <constraint firstItem="t3q-A9-Ntd" firstAttribute="leading" secondItem="Ash-QA-Bcc" secondAttribute="leading" constant="30" id="oYF-jG-m8Q"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ash-QA-Bcc"/>
                     </view>
