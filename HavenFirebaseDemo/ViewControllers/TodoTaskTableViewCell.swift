@@ -8,8 +8,13 @@
 
 import UIKit
 
+protocol TaskTodoTableViewCellDelegate {
+    func taskItemTapped(_ sender: TodoTaskTableViewCell)
+}
+
 class TodoTaskTableViewCell: UITableViewCell {
     
+
     @IBOutlet weak var isCompleteButton: UIButton!
     
     @IBOutlet weak var taskLabel: UILabel!
@@ -18,15 +23,16 @@ class TodoTaskTableViewCell: UITableViewCell {
     
     @IBOutlet weak var ellipseButton: UIButton!
     
-    var delegate: TaskTodoTableViewDelegate?
+    // set delegate to protocol name 
+    var delegate: TaskTodoTableViewCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+    
     }
     
-    fileprivate func updateCompleteButton(_ isComplete: Bool) {
-        let imageName = isComplete ? "complete" : "incomplete"
+    func updateCompleteButton(_ isComplete: Bool) {
+        let imageName = isComplete ? "circleChecked" : "completeCircle"
         isCompleteButton.setImage(UIImage(named: imageName), for: .normal)
     }
     
@@ -36,17 +42,18 @@ class TodoTaskTableViewCell: UITableViewCell {
     }
     
     @IBAction func ellipseButtonTapped(_ sender: Any) {
+
     }
     
 }
 
 extension TodoTaskTableViewCell {
-    func update(task: String) {
-        taskLabel.text = task
-        
+    func update(task: Task) {
+        taskLabel.text = task.taskName
+       // updateCompleteButton(false)
+        task.repeats == true ? notificationButton.setImage(UIImage(named: "bellIcon"), for: .normal) : notificationButton.setImage(UIImage(named: ""), for: .normal)
+        updateCompleteButton(task.isCompleted)
     }
 }
 
-protocol TaskTodoTableViewDelegate {
-    func taskItemTapped(_ sender: TodoTaskTableViewCell)
-}
+

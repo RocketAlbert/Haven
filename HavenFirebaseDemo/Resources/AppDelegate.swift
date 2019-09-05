@@ -7,68 +7,45 @@
 //
 
 import UIKit
-import Firebase
 import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
-    let gcmMessageIDKey = "gcm.message_id"
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // start didFinishLaunchingWithOptions
-        // customize for notifications after application launches
+    
+    private func requestNotificationAuthorization(application: UIApplication) {
+        // make request, request options
+        let center = UNUserNotificationCenter.current()
+        // request options
+        let options: UNAuthorizationOptions = [.alert, .badge, .sound]
         
-        FirebaseApp.configure()
-           // start messaging delegate
-        Messaging.messaging().delegate = self
-        
-        UNUserNotificationCenter.current().delegate = self
-        
-        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
-        
-        UNUserNotificationCenter.current().requestAuthorization(options: authOptions) { (_, error) in
+        center.requestAuthorization(options: options) { (granted, error) in
             if let error = error {
                 print(error.localizedDescription)
             }
+            center.getNotificationSettings(completionHandler: { (settings) in
+                if settings.authorizationStatus != .authorized {
+                    // Notifications not allowed 
+                }
+            })
         }
-        application.registerForRemoteNotifications()
-        
-        // get application instance ID
-        InstanceID.instanceID().instanceID { (result, error) in
-            if let error = error {
-                print("Error fetching remote instance ID: \(error)")
-            } else if let result = result {
-                print("Remote instance ID token: \(result.token)")
-            }
-        }
-        
+    }
+
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        UNUserNotificationCenter.current().delegate = self
+        requestNotificationAuthorization(application: application)
         return true
         
         } // End didFinishLaunchingWithOptions
     
     // solicit permission from the user to recieve notifications
     
-    
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
-        // print message id
-        if let messageID = userInfo[gcmMessageIDKey] {
-            print("Message ID: \(messageID)")
-        }
-        // print full message
-        print(userInfo)
+        
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        // print message id
-        if let messageID = userInfo[gcmMessageIDKey] {
-            print("Message ID: \(messageID)")
-        }
-        
-        print(userInfo)
-        
-        completionHandler(UIBackgroundFetchResult.newData)
         
     }
     
@@ -98,65 +75,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        UIApplication.shared.applicationIconBadgeNumber = 0
+
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void)
+    {
+        let id = response.notification.request.identifier
+        print("Received notification with ID = \(id)")
+        
+        completionHandler()
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void)
+    {
+        let id = notification.request.identifier
+        print("Received notification with ID = \(id)")
+        
+        completionHandler([.sound, .alert, .badge])
+    }
 }
 
-@available(iOS 10, *)
-extension AppDelegate: UNUserNotificationCenterDelegate {
-    
-    // received displayed notifications for iOS 10 devices
-    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        let userInfo = notification.request.content.userInfo
-        
-        // print message ID
-        if let messageID = userInfo[gcmMessageIDKey] {
-            print("Message ID: \(messageID)")
-        }
-        
-        print(userInfo)
-        
-        completionHandler([])
-    }
-    
-//    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-//        let userInfo = response.notification.request.content.userInfo
-//        // print message ID
-//        if let messageID = userInfo[gcmMessageIDKey] {
-//            print("Message ID: \(messageID)")
-//        }
-//
-//        // print full message
-//        print(userInfo)
-//
-//        completionHandler()
-//    }
-}
-
-extension AppDelegate: MessagingDelegate {
-    // start refresh token
-    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
-        
-        InstanceID.instanceID().instanceID { (result, error) in
-            if let error = error {
-                print("Error fetching remote instance ID: \(error)")
-            } else if let result = result {
-                print("Remote FCM token: \(result.token), and Instance ID: \(result.instanceID)")
-                //instanceIDTokenMessage.text = "Remote InstanceID token: \(result.token)"
-            }
-        }
-        
-        print("Firebase registration token: \(fcmToken)")
-        
-        let dataDict:[String: String] = ["token": fcmToken]
-        NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
-    }
-    
-    func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
-        print("Received data message: \(remoteMessage.appData)")
-    }
-}
