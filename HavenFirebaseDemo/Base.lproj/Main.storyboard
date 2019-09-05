@@ -267,12 +267,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zipcode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ooq-4w-d8L">
-                                <rect key="frame" x="41.5" y="395" width="63" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MfP-CH-U2c">
                                 <rect key="frame" x="188.5" y="522.5" width="37" height="30"/>
                                 <state key="normal" title="Done"/>
@@ -280,33 +274,21 @@
                                     <action selector="doneButtonTapped:" destination="Su6-kt-0Ay" eventType="touchUpInside" id="aBw-AT-Zda"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fuN-fF-kZT">
-                                <rect key="frame" x="41.5" y="435.5" width="331" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="postal-code"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="ooq-4w-d8L" firstAttribute="leading" secondItem="fuN-fF-kZT" secondAttribute="leading" id="2lN-8F-cx0"/>
-                            <constraint firstItem="fuN-fF-kZT" firstAttribute="centerY" secondItem="ulg-1H-VFW" secondAttribute="centerY" id="4lg-wP-ilm"/>
-                            <constraint firstItem="fuN-fF-kZT" firstAttribute="centerX" secondItem="ulg-1H-VFW" secondAttribute="centerX" id="7Zr-W7-y1k"/>
                             <constraint firstItem="MfP-CH-U2c" firstAttribute="centerY" secondItem="o6a-H4-D8F" secondAttribute="centerY" multiplier="1.2" id="B2H-Ew-84G"/>
                             <constraint firstItem="MfP-CH-U2c" firstAttribute="centerX" secondItem="o6a-H4-D8F" secondAttribute="centerX" id="GRs-w0-O9T"/>
-                            <constraint firstItem="fuN-fF-kZT" firstAttribute="width" secondItem="o6a-H4-D8F" secondAttribute="width" multiplier="0.8" id="Jup-gS-w19"/>
                             <constraint firstItem="Qr2-3M-teX" firstAttribute="width" secondItem="o6a-H4-D8F" secondAttribute="width" multiplier="0.8" id="NAk-qE-pvy"/>
                             <constraint firstItem="Qr2-3M-teX" firstAttribute="centerY" secondItem="ulg-1H-VFW" secondAttribute="centerY" multiplier="0.8" id="NMA-o4-Owb"/>
                             <constraint firstItem="Qr2-3M-teX" firstAttribute="centerX" secondItem="ulg-1H-VFW" secondAttribute="centerX" id="i4u-gX-P9I"/>
                             <constraint firstItem="5Ro-UD-Pq0" firstAttribute="leading" secondItem="Qr2-3M-teX" secondAttribute="leading" id="shi-2T-BF7"/>
-                            <constraint firstItem="ooq-4w-d8L" firstAttribute="centerY" secondItem="ulg-1H-VFW" secondAttribute="centerY" multiplier="0.9" id="ylr-gA-bTb"/>
                             <constraint firstItem="5Ro-UD-Pq0" firstAttribute="centerY" secondItem="ulg-1H-VFW" secondAttribute="centerY" multiplier="0.7" id="ysr-lw-l09"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ulg-1H-VFW"/>
                     </view>
                     <connections>
                         <outlet property="homeNameTextField" destination="Qr2-3M-teX" id="Tnl-cV-0qm"/>
-                        <outlet property="zipcodeTextField" destination="fuN-fF-kZT" id="eB8-Ml-6MG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cwl-1l-5Xc" userLabel="First Responder" sceneMemberID="firstResponder"/>
