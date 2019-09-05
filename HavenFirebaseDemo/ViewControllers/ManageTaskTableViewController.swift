@@ -63,12 +63,13 @@ class ManageTaskTableViewController: UITableViewController {
         super.viewDidLoad()
         navigationItem.title = "Manage Task"
         navigationItem.largeTitleDisplayMode = .always
-        editTaskLabel.delegate = self
+//        editTaskLabel.delegate = self
         hideTaskFrequency()
         hideDatePicker()
         updateViews()
         
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         updateViews()
@@ -121,10 +122,12 @@ class ManageTaskTableViewController: UITableViewController {
     }
     
     func updateViews() {
+        
         // unwrap object to verify there is content
         guard let task = taskLandingPad else { return }
         
         editTaskLabel.text = task.taskName
+        
         switch task.intervalType {
         case .day:
             intervalSelectedLabel.text = "Daily"
