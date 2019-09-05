@@ -46,6 +46,14 @@ class TaskController: NSObject {
         dateToDisplay = date.stringValue()
     }
     
+    func toggleCompleteFor(task: Task) {
+        task.isCompleted = !task.isCompleted
+        if task.isCompleted == true {
+            task.completedOn = Date()
+        }
+        // save to firestore
+    }
+    
     // CRUD functions
     
     // Create
@@ -116,20 +124,25 @@ class TaskController: NSObject {
         
         UNUserNotificationCenter.current().delegate = self
         
-        
-        let request = UNNotificationRequest(identifier: "testLocalNotification", content: notificationContent, trigger: trigger)
+        // notification identifer == body
+        let request = UNNotificationRequest(identifier: body, content: notificationContent, trigger: trigger)
         
         UNUserNotificationCenter.current().add(request) { (error) in
             if let error = error {
                 print(error.localizedDescription)
             }
         }
+        
     }
     
     // Read
     
     // Update
     
+    func removeNotification(body: String) {
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [body])
+        UIApplication.shared.applicationIconBadgeNumber = 0
+    }
     func updateTask(task: Task, newName: String, dateOfInterval: Date?, newIntervalFrequency: TaskIntervalType) {
         
         task.taskName = newName

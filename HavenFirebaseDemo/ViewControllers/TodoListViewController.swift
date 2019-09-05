@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TodoListViewController: UIViewController, TaskTodoTableViewDelegate {
+class TodoListViewController: UIViewController {
     
     @IBOutlet weak var dailyButton: UIButton!
     
@@ -43,12 +43,19 @@ class TodoListViewController: UIViewController, TaskTodoTableViewDelegate {
         addTaskTextField.delegate = self
         taskTableView.delegate = self
         taskTableView.dataSource = self
+        //progressBar.trackImage = UIImage(named: "grass")
+        //progressBar.progressImage = UIImage(named: "grass")
+        updateProgressBar()
+        progressBar.transform = progressBar.transform.scaledBy(x: 1, y: 8)
+        
         // set initial view as Daily
        // updateToDailyInterval()
         // add observer so that the tableview knows when to reload
         NotificationCenter.default.addObserver(forName: Notification.Name("New Task Created"), object: nil, queue: nil) { (_) in
             self.taskTableView.reloadData()
         }
+        
+       
         
         switch taskFrequency {
         case .day:
@@ -68,9 +75,22 @@ class TodoListViewController: UIViewController, TaskTodoTableViewDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        DispatchQueue.main.async {
-            self.taskTableView.reloadData()
-        }
+
+        
+     
+        
+//        NotificationCenter.default.addObserver(forName: Notification.Name("Notification Created"), object: nil, queue: nil) { (_) in
+//            
+//            self.feedbackLabel.isHidden = false
+//            // Get this to work
+//            UIView.animate(withDuration: 5, delay: 1, options: .curveEaseIn, animations: {
+//            self.feedbackLabel.isHidden = true
+//            }, completion: )
+//            
+//            
+//            
+//            
+//        }
     }
     
     // de-initialize
@@ -205,20 +225,15 @@ class TodoListViewController: UIViewController, TaskTodoTableViewDelegate {
     }
     
     @IBAction func addButtonTapped(_ sender: Any) {
+        // TODO: call the textfield first responder
+        addTaskTextField.becomeFirstResponder()
+        //becomeFirstResponder()
     }
-    
-    func taskItemTapped(_ sender: TodoTaskTableViewCell) {
-        guard let indexPath = taskTableView.indexPath(for: sender) else { return }
-        
-        let task = TaskController.sharedInstance.tasks[indexPath.row]
-        
-    }
+
     
     @IBAction func moreButtonTapped(_ sender: UIButton) {
         //performSegue(withIdentifier: "toManageVC", sender: nil)
-
     }
-    
     
     // MARK: - Navigation
 
@@ -249,24 +264,34 @@ class TodoListViewController: UIViewController, TaskTodoTableViewDelegate {
         }
         addTaskTextField.text = ""
     }
+
 }
 
 extension TodoListViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 44
+        
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         // switch between different buttons selected
         switch taskFrequency {
         case .day:
             let dayTasks = TaskController.sharedInstance.tasks.filter { $0.intervalType == .day }
+            updateProgressBar()
             return dayTasks.count
         case .week:
             let weekTasks = TaskController.sharedInstance.tasks.filter { $0.intervalType == .week}
+            updateProgressBar()
             return weekTasks.count
         case .month:
             let monthTasks = TaskController.sharedInstance.tasks.filter { $0.intervalType == .month}
+            updateProgressBar()
             return monthTasks.count
         case .year:
             let yearTasks = TaskController.sharedInstance.tasks.filter { $0.intervalType == .year}
+            updateProgressBar()
             return yearTasks.count
             
         }
@@ -280,23 +305,29 @@ extension TodoListViewController: UITableViewDelegate, UITableViewDataSource {
             //let dayTasks = taskItem[indexPath.row]
             cell.update(task: dayTasks)
             cell.delegate = self
+            print(dayTasks.taskName)
+            cell.layoutIfNeeded()
             return cell
         case .week:
             let weekTasks = TaskController.sharedInstance.tasks.filter {$0.intervalType == .week}[indexPath.row]
             cell.update(task: weekTasks)
             cell.delegate = self
+            cell.layoutIfNeeded()
             return cell
         case .month:
             let monthTasks = TaskController.sharedInstance.tasks.filter {$0.intervalType == .month}[indexPath.row]
             cell.update(task: monthTasks)
             cell.delegate = self
+            cell.layoutIfNeeded()
             return cell
         case .year:
             let yearTasks = TaskController.sharedInstance.tasks.filter {$0.intervalType == .year}[indexPath.row]
             cell.update(task: yearTasks)
             cell.delegate = self
+            cell.layoutIfNeeded()
             return cell
         }
+        
         
     /*
         let taskItem = TaskController.sharedInstance.tasks[indexPath.row]
@@ -323,9 +354,11 @@ extension TodoListViewController: UITableViewDelegate, UITableViewDataSource {
         return UISwipeActionsConfiguration(actions: [removeAction])
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presentAddSwipeAlert()
-    }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//
+//        presentAddSwipeAlert()
+//        //taskTableView.deselectRow(at: indexPath, animated: true)
+//    }
     
     func presentAddSwipeAlert() {
         
@@ -363,6 +396,49 @@ extension TodoListViewController: UITextFieldDelegate {
         performSegue(withIdentifier: "toAlertVC", sender: nil)
         
         return true
+    }
+}
+extension TodoListViewController: TaskTodoTableViewCellDelegate {
+    // func from protocol, for delegate to execute once tapped
+    func taskItemTapped(_ sender: TodoTaskTableViewCell) {
+        // identify the index path the user tapped on
+        guard let indexPath = taskTableView.indexPath(for: sender) else { return }
+        //guard let indexPath = taskTableView.indexPathForSelectedRow else { return }
+        // create a constant for the item
+        let task = TaskController.sharedInstance.tasks[indexPath.row]
+        // call the toggle is complete function from singleton
+        TaskController.sharedInstance.toggleCompleteFor(task: task)
+        updateProgressBar()
+        sender.update(task: task)
+        //taskTableView.reloadRows(at: [indexPath], with: .none)
+    }
+    func updateProgressBar() {
+        switch taskFrequency {
+        case .day:
+            let dayTasks = TaskController.sharedInstance.tasks.filter {$0.intervalType == .day }
+            progressBar.progress = Float(dayTasks.count)
+            let completedDayTasks = dayTasks.filter { $0.isCompleted == true }
+            progressBar.setProgress(Float(completedDayTasks.count) / Float(dayTasks.count), animated: true)
+            statusFractionLabel.text = "\(completedDayTasks.count) / \(dayTasks.count)"
+            
+        case .week:
+            let weekTasks = TaskController.sharedInstance.tasks.filter { $0.intervalType == .week}
+            progressBar.progress = Float(weekTasks.count)
+            let completedWeekTask = weekTasks.filter { $0.isCompleted == true}
+            progressBar.setProgress(Float(completedWeekTask.count) / Float(weekTasks.count), animated: true)
+        case .month:
+            let monthTasks = TaskController.sharedInstance.tasks.filter {$0.intervalType == .month}
+            progressBar.progress = Float(monthTasks.count)
+            let completedMonthTask = monthTasks.filter { $0.isCompleted == true }
+            progressBar.setProgress(Float(completedMonthTask.count) / Float(monthTasks.count), animated: true)
+        case .year:
+            let yearTasks = TaskController.sharedInstance.tasks.filter {$0.intervalType == .year}
+            progressBar.progress = Float(yearTasks.count)
+            let completedYearTask = yearTasks.filter { $0.isCompleted == true }
+            progressBar.setProgress(Float(completedYearTask.count) / Float(yearTasks.count), animated: true)
+            
+        }
+        
     }
     
 }

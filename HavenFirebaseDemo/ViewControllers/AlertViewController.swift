@@ -46,6 +46,7 @@ class AlertViewController: UIViewController {
         
         TaskController.sharedInstance.createTask(name: task.taskName, date: datePicker.date, intervalFrequency: task.intervalType, repeats: true)
         TaskController.sharedInstance.sendNotification(title: "\(frequency) - Home Maintenance", subtitle: "", body: task.taskName, badge: 1, intervalType: task.intervalType, date: datePicker.date)
+        NotificationCenter.default.post(name: Notification.Name("Notification Created"), object: nil)
         dismiss(animated: true)
     }
     
