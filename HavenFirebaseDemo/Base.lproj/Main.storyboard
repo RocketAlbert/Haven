@@ -732,9 +732,7 @@
         <scene sceneID="SUP-29-D6l">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pEh-U5-GVA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Sugguestions" image="shortgrassExtended" id="t5t-Ad-XiT">
-                        <color key="badgeColor" name="tropicAqua"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="Sugguestions" image="suggDe" id="t5t-Ad-XiT"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wJ8-9l-w7X">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -885,8 +883,7 @@
         <scene sceneID="UQ6-kh-T8W">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dDa-QF-Wov" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Users" image="people" id="FS4-CJ-fdG">
-                        <color key="badgeColor" name="tropicAqua"/>
+                    <tabBarItem key="tabBarItem" title="Users" image="userSel" id="FS4-CJ-fdG">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -917,8 +914,8 @@
         <image name="Summer" width="174" height="174"/>
         <image name="Winter" width="180" height="180"/>
         <image name="home" width="35" height="44"/>
-        <image name="people" width="26" height="26"/>
-        <image name="shortgrassExtended" width="29" height="24"/>
+        <image name="suggDe" width="29" height="24"/>
+        <image name="userSel" width="26" height="26"/>
         <namedColor name="lightBanana">
             <color red="1" green="0.8901960784313725" blue="0.66274509803921566" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

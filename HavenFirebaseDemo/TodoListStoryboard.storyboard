@@ -753,9 +753,7 @@
         <scene sceneID="JGj-qQ-wKs">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dIu-Bs-bfG" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="homeIcon" id="vPs-PL-g1o">
-                        <color key="badgeColor" name="tropicAqua"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="Home" image="homeDe" id="vPs-PL-g1o"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xmq-iv-tDM">
@@ -789,7 +787,7 @@
         <image name="doneButton" width="352" height="44"/>
         <image name="ellipse" width="21" height="5"/>
         <image name="grass" width="417" height="40"/>
-        <image name="homeIcon" width="28" height="25"/>
+        <image name="homeDe" width="28" height="25"/>
         <image name="month" width="16" height="15"/>
         <image name="removeButton" width="352" height="44"/>
         <image name="shortextendedgrass" width="691" height="5"/>
