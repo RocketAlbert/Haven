@@ -10,6 +10,8 @@ import UIKit
 
 protocol TaskTodoTableViewCellDelegate {
     func taskItemTapped(_ sender: TodoTaskTableViewCell)
+    
+    func ellipseButtonTapped(_ sender: TodoTaskTableViewCell)
 }
 
 class TodoTaskTableViewCell: UITableViewCell {
@@ -25,6 +27,8 @@ class TodoTaskTableViewCell: UITableViewCell {
     
     // set delegate to protocol name 
     var delegate: TaskTodoTableViewCellDelegate?
+    // landing pad
+    var task: Task?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -38,17 +42,20 @@ class TodoTaskTableViewCell: UITableViewCell {
     
     
     @IBAction func isCompleteButtonTapped(_ sender: Any) {
+        // TODO: update button state
         delegate?.taskItemTapped(self)
     }
     
     @IBAction func ellipseButtonTapped(_ sender: Any) {
-
+        delegate?.ellipseButtonTapped(self)
     }
     
 }
 
 extension TodoTaskTableViewCell {
-    func update(task: Task) {
+    func update() {
+        // unwraps the landing pad / object 
+        guard let task = task else { return }
         taskLabel.text = task.taskName
        // updateCompleteButton(false)
         task.repeats == true ? notificationButton.setImage(UIImage(named: "bellIcon"), for: .normal) : notificationButton.setImage(UIImage(named: ""), for: .normal)

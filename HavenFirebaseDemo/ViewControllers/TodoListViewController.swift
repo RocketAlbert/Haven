@@ -43,6 +43,8 @@ class TodoListViewController: UIViewController {
         addTaskTextField.delegate = self
         taskTableView.delegate = self
         taskTableView.dataSource = self
+        taskTableView.cellLayoutMarginsFollowReadableWidth = false
+        taskTableView.insetsLayoutMarginsFromSafeArea = false
         //progressBar.trackImage = UIImage(named: "grass")
         //progressBar.progressImage = UIImage(named: "grassLawnMower")
         updateProgressBar()
@@ -75,7 +77,7 @@ class TodoListViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-
+        taskTableView.reloadData()
         
      
         
@@ -251,27 +253,15 @@ class TodoListViewController: UIViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        guard let taskName = addTaskTextField.text else { return }
+        let taskName = addTaskTextField.text
         
         if segue.identifier == "toAlertVC" {
             
-            let newlyMadeTask = Task(uid: UUID().uuidString, taskName: taskName, home: "default home", createdByUser: "self", dateOfInterval: TaskController.sharedInstance.dateChosen, intervalType: taskFrequency, completedOn: nil, isCompleted: false, repeats: false)
+            let newlyMadeTask = Task(uid: UUID().uuidString, taskName: taskName ?? "", home: "default home", createdByUser: "self", dateOfInterval: TaskController.sharedInstance.dateChosen, intervalType: taskFrequency, completedOn: nil, isCompleted: false, repeats: false)
             let destinationVC = segue.destination as? AlertViewController
             destinationVC?.taskLandingPad = newlyMadeTask
             print("task frequency is set to: \(taskFrequency)")
             
-        }
-        if segue.identifier == "toManageVC" {
-             // object to send
-            let newlyMadeTask = Task(uid: UUID().uuidString, taskName: taskName, home: "default home", createdByUser: "self", dateOfInterval: TaskController.sharedInstance.dateChosen, intervalType: taskFrequency, completedOn: nil, isCompleted: false, repeats: false)
-            
-            // destination
-            let destinationVC = segue.destination as? ManageTaskTableViewController
-           
-            // object to set (landing pad)
-            destinationVC?.taskLandingPad = newlyMadeTask
-            print("task frequency is set to: \(taskFrequency)")
-
         }
         addTaskTextField.text = ""
     }
@@ -310,42 +300,27 @@ extension TodoListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "TaskCell", for: indexPath) as? TodoTaskTableViewCell else { return UITableViewCell() }
+        
+        let taskIntervalType: TaskIntervalType
+        
         switch taskFrequency {
         case .day:
-            let dayTasks = TaskController.sharedInstance.tasks.filter { $0.intervalType == .day }[indexPath.row]
-            //let dayTasks = taskItem[indexPath.row]
-            cell.update(task: dayTasks)
-            cell.delegate = self
-            print(dayTasks.taskName)
-            cell.layoutIfNeeded()
-            return cell
+            taskIntervalType = .day
         case .week:
-            let weekTasks = TaskController.sharedInstance.tasks.filter {$0.intervalType == .week}[indexPath.row]
-            cell.update(task: weekTasks)
-            cell.delegate = self
-            cell.layoutIfNeeded()
-            return cell
+            taskIntervalType = .week
         case .month:
-            let monthTasks = TaskController.sharedInstance.tasks.filter {$0.intervalType == .month}[indexPath.row]
-            cell.update(task: monthTasks)
-            cell.delegate = self
-            cell.layoutIfNeeded()
-            return cell
+            taskIntervalType = .month
         case .year:
-            let yearTasks = TaskController.sharedInstance.tasks.filter {$0.intervalType == .year}[indexPath.row]
-            cell.update(task: yearTasks)
-            cell.delegate = self
-            cell.layoutIfNeeded()
-            return cell
+            taskIntervalType = .year
         }
+        let task = TaskController.sharedInstance.tasks.filter {$0.intervalType == taskIntervalType}[indexPath.row]
         
-        
-    /*
-        let taskItem = TaskController.sharedInstance.tasks[indexPath.row]
-        cell.update(task: taskItem)
+        cell.task = task
+        cell.update()
         cell.delegate = self
+        cell.layoutIfNeeded()
+        
         return cell
-        */
     }
     
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
@@ -410,6 +385,22 @@ extension TodoListViewController: UITextFieldDelegate {
     }
 }
 extension TodoListViewController: TaskTodoTableViewCellDelegate {
+    
+    func ellipseButtonTapped(_ sender: TodoTaskTableViewCell) {
+        // object to send
+        let task = sender.task
+        // init new view controller
+        let storyBoard = UIStoryboard(name: "TodoListStoryboard", bundle: .main)
+        guard let manageTaskTableViewController = storyBoard.instantiateViewController(withIdentifier: "ManageTaskTableViewController") as? ManageTaskTableViewController else { return }
+        
+        // give object to view controller
+        manageTaskTableViewController.taskLandingPad = task
+        
+        // present view controller
+        navigationController?.pushViewController(manageTaskTableViewController, animated: true)
+        
+    }
+    
     // func from protocol, for delegate to execute once tapped
     func taskItemTapped(_ sender: TodoTaskTableViewCell) {
         // identify the index path the user tapped on
@@ -420,8 +411,11 @@ extension TodoListViewController: TaskTodoTableViewCellDelegate {
         // call the toggle is complete function from singleton
         TaskController.sharedInstance.toggleCompleteFor(task: task)
         updateProgressBar()
-        sender.update(task: task)
+        // TODO:
+//        sender.update(task: task)
         //taskTableView.reloadRows(at: [indexPath], with: .none)
+        
+        
     }
     func updateProgressBar() {
         switch taskFrequency {
