@@ -290,7 +290,7 @@ extension TodoListViewController: UITableViewDelegate, UITableViewDataSource {
             taskIntervalType = .year
         }
         let task = TaskController.sharedInstance.tasks.filter {$0.intervalType == taskIntervalType}[indexPath.row]
-        
+                
         cell.task = task
         cell.update()
         cell.delegate = self
