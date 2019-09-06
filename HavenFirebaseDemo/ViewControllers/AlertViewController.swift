@@ -30,7 +30,7 @@ class AlertViewController: UIViewController {
         guard let task = taskLandingPad else { return }
         
         task.dateOfInterval = datePicker.date
-        // TODO: createTask from sharedInstance
+        
         var frequency: String = ""
         
         switch task.intervalType {
@@ -53,7 +53,10 @@ class AlertViewController: UIViewController {
     
     @IBAction func skipButtonTapped(_ sender: UIButton) {
         guard let task = taskLandingPad else { return }
+        
+        
         TaskController.sharedInstance.createTask(name: task.taskName, date: nil, intervalFrequency: task.intervalType, repeats: false)
+        NotificationCenter.default.post(name: Notification.Name("Notification Created"), object: nil)
         dismiss(animated: true)
     }
     
