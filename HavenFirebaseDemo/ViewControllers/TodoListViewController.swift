@@ -47,14 +47,12 @@ class TodoListViewController: UIViewController {
         updateProgressBar()
         progressBar.transform = progressBar.transform.scaledBy(x: 1, y: 8)
         
-        // set initial view as Daily
-       // updateToDailyInterval()
+        
         // add observer so that the tableview knows when to reload
         NotificationCenter.default.addObserver(forName: Notification.Name("New Task Created"), object: nil, queue: nil) { (_) in
             self.taskTableView.reloadData()
         }
         
-       
         
         switch taskFrequency {
         case .day:
@@ -77,6 +75,7 @@ class TodoListViewController: UIViewController {
         taskTableView.reloadData()
         
     }
+    
     
     // de-initialize
     deinit {
@@ -300,21 +299,45 @@ extension TodoListViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    
+    
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let completeAction = UIContextualAction(style: .destructive, title: "Complete") { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
             success(true)
+            
         }
         completeAction.backgroundColor = UIColor(named: "aquaGreen")
+        let task = TaskController.sharedInstance.tasks[indexPath.row]
+        
+        if task.isCompleted == false {
+            task.isCompleted = true
+            task.completedOn = Date()
+            //self.taskTableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+        updateProgressBar()
         return UISwipeActionsConfiguration(actions: [completeAction])
     }
     
-    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let removeAction = UIContextualAction(style: .destructive, title: "Remove") { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
-            success(true)
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+    
+            let task = TaskController.sharedInstance.tasks[indexPath.row]
+            TaskController.sharedInstance.deleteTask(task: task)
+            // delete row from tableView
+            taskTableView.reloadData()
+            //taskTableView.deleteRows(at: [indexPath], with: .automatic)
+            updateProgressBar()
         }
-        removeAction.backgroundColor = .gray
-        return UISwipeActionsConfiguration(actions: [removeAction])
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let deleteButton = UITableViewRowAction(style: .default, title: "Delete") { (action, indexPath) in
+            self.taskTableView.dataSource?.tableView!(self.taskTableView, commit: .delete, forRowAt: indexPath)
+            return
+        }
+        deleteButton.backgroundColor = UIColor.gray
+        return [deleteButton]
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -349,6 +372,7 @@ extension TodoListViewController: UITextFieldDelegate {
         textField.adjustsFontForContentSizeCategory = true
         //textField.adjustsFontSizeToFitWidth = true
     }
+
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
        
