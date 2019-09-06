@@ -30,11 +30,6 @@ class TodoTaskTableViewCell: UITableViewCell {
     // landing pad
     var task: Task?
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    
-    }
-    
     func updateCompleteButton(_ isComplete: Bool) {
         let imageName = isComplete ? "circleChecked" : "completeCircle"
         isCompleteButton.setImage(UIImage(named: imageName), for: .normal)
