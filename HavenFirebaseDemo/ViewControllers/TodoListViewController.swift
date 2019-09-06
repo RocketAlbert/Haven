@@ -250,6 +250,7 @@ extension TodoListViewController: UITableViewDelegate, UITableViewDataSource {
         return 44
         
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         // switch between different buttons selected
@@ -316,11 +317,11 @@ extension TodoListViewController: UITableViewDelegate, UITableViewDataSource {
         return UISwipeActionsConfiguration(actions: [removeAction])
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//
-//        presentAddSwipeAlert()
-//        //taskTableView.deselectRow(at: indexPath, animated: true)
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        presentAddSwipeAlert()
+        //taskTableView.deselectRow(at: indexPath, animated: true)
+    }
     
     func presentAddSwipeAlert() {
         
@@ -388,7 +389,7 @@ extension TodoListViewController: TaskTodoTableViewCellDelegate {
         TaskController.sharedInstance.toggleCompleteFor(task: task)
         updateProgressBar()
         // TODO:
-//        sender.update(task: task)
+        sender.update()
         //taskTableView.reloadRows(at: [indexPath], with: .none)
         
         
